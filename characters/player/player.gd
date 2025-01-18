@@ -13,12 +13,17 @@ extends CharacterBody3D
 
 var inventoryOpen := false
 
+var facingDoor := false
+
 signal interactedWithItem(item)
+
+signal interactedWithDoor(door)
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
+		
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("open_inventory"):
@@ -76,3 +81,6 @@ func raycastScans():
 		if currentCollider.is_in_group("items"):
 			interactedWithItem.emit(currentCollider)
 			#await Engine.get_main_loop().process_frame
+		if currentCollider.is_in_group("doors"):
+			print("hitting door")
+			interactedWithDoor.emit(currentCollider)

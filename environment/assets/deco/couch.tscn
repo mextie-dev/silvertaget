@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8rioku7f2r0r"]
+
+[ext_resource type="Material" uid="uid://b1gt6qe4db1jv" path="res://environment/assets/materials/red.tres" id="1_s6lvc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iqw6r"]
+size = Vector3(3.095, 0.81, 1.66)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aqn0m"]
+size = Vector3(3.21, 1.185, 0.295)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wdxrs"]
+top_radius = 0.35
+bottom_radius = 0.35
+height = 1.705
+radial_segments = 5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xh5r1"]
+size = Vector3(3.84, 1.745, 1.58)
+
+[node name="Couch" type="Node3D"]
+
+[node name="Seat" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_s6lvc")
+mesh = SubResource("BoxMesh_iqw6r")
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.959265, 0.282509, 0, -0.282509, 0.959265, 0, 0.797189, -0.493708)
+material_override = ExtResource("1_s6lvc")
+mesh = SubResource("BoxMesh_aqn0m")
+
+[node name="Arm" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.51018, 0.584814, 0)
+material_override = ExtResource("1_s6lvc")
+mesh = SubResource("CylinderMesh_wdxrs")
+
+[node name="Arm2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.48982, 0.584814, 0)
+material_override = ExtResource("1_s6lvc")
+mesh = SubResource("CylinderMesh_wdxrs")
+
+[node name="Hitbox" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_xh5r1")

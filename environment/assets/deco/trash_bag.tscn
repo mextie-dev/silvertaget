@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1giqucpb0kn3"]
+
+[ext_resource type="Material" uid="uid://dbq8lbs7n3wm5" path="res://environment/assets/materials/black.tres" id="1_m3o3p"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_cuhlw"]
+height = 0.84
+radial_segments = 4
+rings = 5
+
+[sub_resource type="PrismMesh" id="PrismMesh_4v0cm"]
+left_to_right = 0.4
+size = Vector3(0.15, 0.565, 0.11)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4fxci"]
+height = 1.3453
+
+[node name="TrashBag" type="Node3D"]
+
+[node name="Bag" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_m3o3p")
+mesh = SubResource("SphereMesh_cuhlw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.967727, -0.252002, 2.20307e-08, -0.248808, -0.955464, 0.158692, -0.0399907, -0.153571, -0.987328, 0, 0.342145, 0)
+material_override = ExtResource("1_m3o3p")
+mesh = SubResource("PrismMesh_4v0cm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.885896, 0.463884, -4.0554e-08, 0.462787, -0.883801, -0.0687291, -0.0318824, 0.0608868, -0.997635, 0, 0.342145, 0)
+material_override = ExtResource("1_m3o3p")
+mesh = SubResource("PrismMesh_4v0cm")
+
+[node name="Hitbox" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("CylinderShape3D_4fxci")

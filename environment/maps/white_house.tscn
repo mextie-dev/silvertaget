@@ -1,16 +1,24 @@
-[gd_scene load_steps=18 format=3 uid="uid://xox0dkwmhyjj"]
+[gd_scene load_steps=26 format=3 uid="uid://xox0dkwmhyjj"]
 
 [ext_resource type="Material" uid="uid://b45np12ymeg25" path="res://environment/assets/materials/brownfloor.tres" id="1_eqai3"]
 [ext_resource type="PackedScene" uid="uid://be21yg8vdh4bq" path="res://characters/player/player.tscn" id="1_g0cyk"]
 [ext_resource type="Script" path="res://environment/maps/white_house.gd" id="1_w63ts"]
 [ext_resource type="PackedScene" uid="uid://bdib7xl6r8wkr" path="res://environment/assets/models/blenderfiles/stairs.tscn" id="3_fq07p"]
 [ext_resource type="Material" uid="uid://dj6bavc0aiu0i" path="res://environment/assets/materials/stone.tres" id="5_kaj3g"]
+[ext_resource type="PackedScene" uid="uid://bfplghgmmsrvk" path="res://environment/assets/deco/string_lights.tscn" id="6_5c4yc"]
+[ext_resource type="PackedScene" uid="uid://cghatiavxm0hy" path="res://environment/assets/deco/string_lights_green.tscn" id="7_ou2yw"]
+[ext_resource type="PackedScene" uid="uid://bsqq01p34ayr5" path="res://environment/assets/deco/table.tscn" id="8_megow"]
+[ext_resource type="PackedScene" uid="uid://b1giqucpb0kn3" path="res://environment/assets/deco/trash_bag.tscn" id="8_pl7jm"]
+[ext_resource type="PackedScene" uid="uid://c8rioku7f2r0r" path="res://environment/assets/deco/couch.tscn" id="9_064wc"]
+[ext_resource type="PackedScene" uid="uid://ccb51sqvmqb3s" path="res://environment/assets/deco/lamp.tscn" id="11_x0jdf"]
+[ext_resource type="PackedScene" uid="uid://y5dsevyimjib" path="res://environment/assets/deco/television.tscn" id="12_84r5m"]
+[ext_resource type="PackedScene" uid="uid://v2mavf8n0np5" path="res://environment/assets/deco/door.tscn" id="13_6nw2k"]
 
 [sub_resource type="Environment" id="Environment_nw3xm"]
 background_mode = 1
 background_color = Color(0.947199, 0.947199, 0.947199, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.597176, 0.597176, 0.597176, 1)
+ambient_light_color = Color(0.180005, 0.180005, 0.180005, 1)
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
@@ -106,7 +114,7 @@ skeleton = NodePath("../../..")
 shape = SubResource("ConcavePolygonShape3D_hs2ei")
 
 [node name="Wall15" type="MeshInstance3D" parent="Environment/Walls"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 8, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 8, -0.908569)
 material_override = ExtResource("5_kaj3g")
 mesh = SubResource("BoxMesh_3bvt6")
 skeleton = NodePath("../../..")
@@ -117,7 +125,7 @@ skeleton = NodePath("../../..")
 shape = SubResource("ConcavePolygonShape3D_hs2ei")
 
 [node name="Wall16" type="MeshInstance3D" parent="Environment/Walls"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 8, -16)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 8, -15.0598)
 material_override = ExtResource("5_kaj3g")
 mesh = SubResource("BoxMesh_3bvt6")
 skeleton = NodePath("../../..")
@@ -150,7 +158,7 @@ skeleton = NodePath("../../..")
 shape = SubResource("ConcavePolygonShape3D_5b4ug")
 
 [node name="Wall10" type="MeshInstance3D" parent="Environment/Walls"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18, 4, 5.47736)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18, 4, 5.49897)
 material_override = ExtResource("5_kaj3g")
 mesh = SubResource("BoxMesh_3bvt6")
 skeleton = NodePath("../../..")
@@ -287,7 +295,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_0anh1")
 
 [node name="Floor4" type="MeshInstance3D" parent="Environment/FirstFloor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.25476, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.06717, -9)
 material_override = ExtResource("1_eqai3")
 mesh = SubResource("BoxMesh_5y853")
 skeleton = NodePath("../..")
@@ -298,7 +306,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_0anh1")
 
 [node name="Floor6" type="MeshInstance3D" parent="Environment/FirstFloor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 7.25476, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 7.06717, -18)
 material_override = ExtResource("1_eqai3")
 mesh = SubResource("BoxMesh_5y853")
 skeleton = NodePath("../..")
@@ -309,7 +317,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_0anh1")
 
 [node name="Floor5" type="MeshInstance3D" parent="Environment/FirstFloor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 7.25476, 0.64081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 7.06717, 0.64081)
 material_override = ExtResource("1_eqai3")
 mesh = SubResource("BoxMesh_5y853")
 skeleton = NodePath("../..")
@@ -320,3 +328,132 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_0anh1")
 
 [node name="Player" parent="." instance=ExtResource("1_g0cyk")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39621, 0)
+light_color = Color(0.325441, 0.325441, 0.325441, 1)
+omni_range = 3.61
+
+[node name="Stringlights" type="Node3D" parent="."]
+
+[node name="StringLights" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -6.80718)
+
+[node name="StringLights10" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.47678, 1.4915, -16.899)
+
+[node name="StringLights12" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.90585, 5.28945, -18.4458)
+
+[node name="StringLights13" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70499, 5.28945, -18.4458)
+
+[node name="StringLights14" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51849, 5.28945, -18.4458)
+
+[node name="StringLights15" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681736, 5.28945, -18.4458)
+
+[node name="StringLights16" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.3474, 5.28945, -5.92848)
+
+[node name="StringLights11" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0964484, 1.4915, -18.4974)
+
+[node name="StringLights3" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -10.0098)
+
+[node name="StringLights2" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -3.60443)
+
+[node name="StringLights4" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.5038, 5.35058, -4.30797)
+
+[node name="StringLights5" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.5038, 5.56388, -1.10766)
+
+[node name="StringLights8" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4946, 5.73653, -3.3994)
+
+[node name="StringLights9" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4946, 5.94983, -0.199087)
+
+[node name="StringLights6" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0894, 5.55996, 0.494408)
+
+[node name="StringLights7" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2865, 5.55996, 0.494408)
+
+[node name="Trash" type="Node3D" parent="."]
+
+[node name="TrashBag" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1117, 3.75476, -17.2291)
+
+[node name="TrashBag2" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1.58, 0, 0, 0, 1.58, 0, 0, 0, 1.58, 9.90679, 3.75476, -18.0459)
+
+[node name="TrashBag3" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1.46, 0, 0, 0, 1.46, 0, 0, 0, 1.46, 13.4332, 0.144341, 0.5)
+
+[node name="TrashBag4" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6531, 1.19209e-07, 0.487399)
+
+[node name="TrashBag5" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1.12, 0, 0, 0, 1.12, 0, 0, 0, 1.12, 11.7303, 2.38419e-07, -0.0733442)
+
+[node name="TrashBag6" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(0.201762, 0, -0.979435, 0, 1, 0, 0.979435, 0, 0.201762, 17.1665, -1.19209e-07, -9.10226)
+
+[node name="TrashBag7" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1.545, 0, 0, 0, 1.545, 0, 0, 0, 1.545, -1.12783, 0.260183, -18.0929)
+
+[node name="TrashBag8" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, -0.13766, 0, -18.1495)
+
+[node name="TrashBag9" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16482, -1.19209e-07, -17.0893)
+
+[node name="Couches" type="Node3D" parent="."]
+
+[node name="Couch" parent="Couches" instance=ExtResource("9_064wc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.70888, 1.19209e-07, -17.6286)
+
+[node name="Couch2" parent="Couches" instance=ExtResource("9_064wc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.7832, 2.38419e-07, -6.53854)
+
+[node name="Couch3" parent="Couches" instance=ExtResource("9_064wc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.85548, 3.75476, -2.21194)
+
+[node name="Couch4" parent="Couches" instance=ExtResource("9_064wc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 23.2077, 3.75476, 5.62762)
+
+[node name="Table" type="Node3D" parent="."]
+
+[node name="Table" parent="Table" instance=ExtResource("8_megow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77102, 0, -13.3078)
+
+[node name="Table2" parent="Table" instance=ExtResource("8_megow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159944, 4, -9.5598)
+
+[node name="Table4" parent="Table" instance=ExtResource("8_megow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9345, 4, -2.66658)
+
+[node name="Table3" parent="Table" instance=ExtResource("8_megow")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.882203, 4, -5.90325)
+
+[node name="Lamp" parent="." instance=ExtResource("11_x0jdf")]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, -0.756242, 4.85371, -9.38475)
+color = Color(0.643984, 1, 0.805065, 1)
+
+[node name="Lamp2" parent="." instance=ExtResource("11_x0jdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4398, 3.75476, 5.34028)
+color = Color(0.281915, 0.787898, 0.881119, 1)
+
+[node name="tvset" parent="." instance=ExtResource("12_84r5m")]
+transform = Transform3D(-2.07629e-08, 0, 0.475, 0, 0.475, 0, -0.475, 0, -2.07629e-08, 6.7234, 1.28806, -13.2546)
+
+[node name="Door" parent="." instance=ExtResource("13_6nw2k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.3, 5, -5.91766)
+
+[node name="Door2" parent="." instance=ExtResource("13_6nw2k")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.3, 5, -8.51732)

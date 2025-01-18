@@ -598,13 +598,11 @@ shape = SubResource("BoxShape3D_hrq4r")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07792, 0.874339, 38)
 stats = ExtResource("13_51egm")
 
-[connection signal="interactedWithItem" from="Player" to="SilverKey" method="addItem"]
 [connection signal="body_entered" from="TeleportZPositive" to="." method="teleportPlayerPositiveZ"]
 [connection signal="body_entered" from="TeleportZNegative" to="." method="teleportPlayerNegativeZ"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="disableBarrier"]
 [connection signal="startMoving" from="Train/train_car" to="." method="startMoving" flags=6]
 [connection signal="body_entered" from="ExitArea" to="." method="exitArea"]
-[connection signal="interactedItem" from="SilverKey" to="Player/InventoryManager" method="addItem"]
 
 [editable path="Player"]
 [editable path="Train"]

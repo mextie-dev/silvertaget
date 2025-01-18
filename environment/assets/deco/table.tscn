@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsqq01p34ayr5"]
+
+[ext_resource type="Material" uid="uid://ud5lsb0va42i" path="res://environment/assets/materials/wood.tres" id="1_75d71"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jnv2y"]
+size = Vector3(2.53, 0.15, 1.125)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fwqvk"]
+data = PackedVector3Array(-1.265, 0.075, 0.5625, 1.265, 0.075, 0.5625, -1.265, -0.075, 0.5625, 1.265, 0.075, 0.5625, 1.265, -0.075, 0.5625, -1.265, -0.075, 0.5625, 1.265, 0.075, -0.5625, -1.265, 0.075, -0.5625, 1.265, -0.075, -0.5625, -1.265, 0.075, -0.5625, -1.265, -0.075, -0.5625, 1.265, -0.075, -0.5625, 1.265, 0.075, 0.5625, 1.265, 0.075, -0.5625, 1.265, -0.075, 0.5625, 1.265, 0.075, -0.5625, 1.265, -0.075, -0.5625, 1.265, -0.075, 0.5625, -1.265, 0.075, -0.5625, -1.265, 0.075, 0.5625, -1.265, -0.075, -0.5625, -1.265, 0.075, 0.5625, -1.265, -0.075, 0.5625, -1.265, -0.075, -0.5625, 1.265, 0.075, 0.5625, -1.265, 0.075, 0.5625, 1.265, 0.075, -0.5625, -1.265, 0.075, 0.5625, -1.265, 0.075, -0.5625, 1.265, 0.075, -0.5625, -1.265, -0.075, 0.5625, 1.265, -0.075, 0.5625, -1.265, -0.075, -0.5625, 1.265, -0.075, 0.5625, 1.265, -0.075, -0.5625, -1.265, -0.075, -0.5625)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ecn80"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.395
+radial_segments = 4
+
+[node name="Table" type="Node3D"]
+
+[node name="Desk" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.772369, 0)
+material_override = ExtResource("1_75d71")
+mesh = SubResource("BoxMesh_jnv2y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Desk"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fwqvk")
+
+[node name="Foot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0.408107)
+material_override = ExtResource("1_75d71")
+mesh = SubResource("CylinderMesh_ecn80")
+
+[node name="Foot2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0.408107)
+material_override = ExtResource("1_75d71")
+mesh = SubResource("CylinderMesh_ecn80")
+
+[node name="Foot3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -0.391324)
+material_override = ExtResource("1_75d71")
+mesh = SubResource("CylinderMesh_ecn80")
+
+[node name="Foot4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -0.391324)
+material_override = ExtResource("1_75d71")
+mesh = SubResource("CylinderMesh_ecn80")

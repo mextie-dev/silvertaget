@@ -24,6 +24,14 @@ var itemIcons = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	var itemsInScene = get_tree().get_nodes_in_group("items")
+	
+	for item in len(itemsInScene):
+		itemsInScene[item] = itemsInScene[item].get_parent()
+		itemsInScene[item].interactedItem.connect(addItem)
+		
+	
+	
 	# initialize text for slots
 	itemSlots = [slot_one, slot_two, slot_three, slot_four, slot_five, slot_six]
 	

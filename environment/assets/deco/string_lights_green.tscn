@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://cghatiavxm0hy"]
+
+[ext_resource type="Texture2D" uid="uid://cresnvjcaacny" path="res://environment/assets/textures/lights_decal_green2.png" id="1_7kk2m"]
+[ext_resource type="Texture2D" uid="uid://cp3wpcv6odl15" path="res://environment/assets/textures/lights_decal_green1.png" id="2_gcqss"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_df60y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7kk2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gcqss")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_rw6ij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GreenLight:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PurpleLight:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_onev0"]
+resource_name = "lightChanges"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GreenLight:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PurpleLight:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite3D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rngjg"]
+_data = {
+"RESET": SubResource("Animation_rw6ij"),
+"lightChanges": SubResource("Animation_onev0")
+}
+
+[node name="StringLightsGreen" type="Node3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_df60y")
+
+[node name="GreenLight" type="OmniLight3D" parent="."]
+light_color = Color(0, 0.964021, 0.610398, 1)
+omni_range = 3.73
+
+[node name="PurpleLight" type="OmniLight3D" parent="."]
+visible = false
+light_color = Color(0.735853, 0.623864, 1, 1)
+omni_range = 3.73
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rngjg")
+}
+autoplay = "lightChanges"
