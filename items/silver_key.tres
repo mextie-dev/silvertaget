@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://ckyly64yma22s"]
+
+[ext_resource type="Texture2D" uid="uid://b55l3isra70lx" path="res://environment/assets/textures/silver_key.png" id="1_tw28d"]
+[ext_resource type="Script" path="res://inventory_item.gd" id="2_bcnrw"]
+
+[resource]
+script = ExtResource("2_bcnrw")
+itemName = "Silver Key"
+itemID = 0
+icon = ExtResource("1_tw28d")
+hitbox_size = Vector3(0.5, 0.5, 0.5)

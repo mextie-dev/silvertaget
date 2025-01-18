@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c3mgasxd8q0ud"]
+
+[ext_resource type="FontFile" uid="uid://dyey72dxo5hd2" path="res://ui/8bitoperatorSven.ttf" id="1_r35xk"]
+
+[resource]
+default_font = ExtResource("1_r35xk")

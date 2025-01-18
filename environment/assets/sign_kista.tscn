@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvj6tqc4i6x7c"]
+
+[ext_resource type="Texture2D" uid="uid://c11htf2ilb72b" path="res://environment/assets/textures/signfront_kista.png" id="1_gy13x"]
+[ext_resource type="Texture2D" uid="uid://bt7kis2n62mjb" path="res://environment/assets/textures/sigsignback_kista.png" id="2_xyl2r"]
+
+[node name="SignKista" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000815183)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_gy13x")
+
+[node name="SignBack" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.000903428)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_xyl2r")

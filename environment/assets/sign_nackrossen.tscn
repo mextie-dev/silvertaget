@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmkmb338m0jxh"]
+
+[ext_resource type="Texture2D" uid="uid://bqo31t2i2vll8" path="res://environment/assets/textures/signfront_nackrossen.png" id="1_ifmy1"]
+[ext_resource type="Texture2D" uid="uid://dvwhv3du6euh2" path="res://environment/assets/textures/signback_nackrossen.png" id="2_c0rhn"]
+
+[node name="Sign" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000815183)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_ifmy1")
+
+[node name="SignBack" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.000903428)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_c0rhn")

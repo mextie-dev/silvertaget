@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b45np12ymeg25"]
+
+[ext_resource type="Texture2D" uid="uid://bi34s8jmg5osh" path="res://environment/assets/textures/brownfloor.png" id="1_lqn36"]
+
+[resource]
+albedo_texture = ExtResource("1_lqn36")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

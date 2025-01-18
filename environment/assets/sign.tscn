@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhaytjoo51a2k"]
+
+[ext_resource type="Texture2D" uid="uid://d1tjeumjea8i" path="res://environment/assets/textures/signfront.png" id="1_scjlx"]
+[ext_resource type="Texture2D" uid="uid://cshea70xksunc" path="res://environment/assets/textures/signback.png" id="2_q43g7"]
+
+[node name="Sign" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000815183)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_scjlx")
+
+[node name="SignBack" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.000903428)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_q43g7")

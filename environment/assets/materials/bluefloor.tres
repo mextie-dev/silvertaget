@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ckhhyc6juacru"]
+
+[ext_resource type="Texture2D" uid="uid://cul8va33kns46" path="res://environment/assets/textures/bluefloor.png" id="1_ierlb"]
+
+[resource]
+albedo_texture = ExtResource("1_ierlb")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0

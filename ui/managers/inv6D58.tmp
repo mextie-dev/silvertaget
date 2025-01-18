@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://tgmvmhx4igv1"]
+
+[ext_resource type="Theme" uid="uid://c3mgasxd8q0ud" path="res://ui/game_theme.tres" id="1_rtime"]
+[ext_resource type="Script" path="res://ui/managers/inventory_manager.gd" id="1_urbt6"]
+[ext_resource type="Script" path="res://ui/managers/item.gd" id="3_he7l8"]
+[ext_resource type="Texture2D" uid="uid://km3gqyaqxpox" path="res://icon.svg" id="4_ldgj2"]
+[ext_resource type="Script" path="res://inventory_item.gd" id="5_6p7a0"]
+
+[sub_resource type="Resource" id="Resource_qw16w"]
+script = ExtResource("5_6p7a0")
+itemName = "test"
+itemID = 9999
+icon = ExtResource("4_ldgj2")
+
+[node name="InventoryManager" type="Node2D"]
+script = ExtResource("1_urbt6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 71.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "Inventory:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_top = 33.815
+offset_right = 40.0
+offset_bottom = 73.815
+theme_override_constants/margin_left = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="SlotOne" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotOne"
+
+[node name="SlotTwo" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotTwo"
+
+[node name="SlotThree" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotThree"
+
+[node name="SlotFour" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotFour"
+
+[node name="SlotFive" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotFive"
+
+[node name="SlotSix" type="Label" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotSix"
+
+[node name="AddItemTest" type="Button" parent="."]
+offset_left = 196.0
+offset_top = 21.0
+offset_right = 311.0
+offset_bottom = 52.0
+text = "Add Item Test"
+script = ExtResource("3_he7l8")
+stats = SubResource("Resource_qw16w")
+
+[connection signal="pickedUpItem" from="AddItemTest" to="." method="addItem"]
+[connection signal="pressed" from="AddItemTest" to="AddItemTest" method="_on_pressed"]

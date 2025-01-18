@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=3 uid="uid://do28ueychsa75"]
+
+[ext_resource type="Script" path="res://environment/maps/train_map.gd" id="1_2mn00"]
+[ext_resource type="PackedScene" uid="uid://6ujo7r6vhhk1" path="res://environment/assets/models/train.tscn" id="2_xb6ew"]
+[ext_resource type="Material" uid="uid://fh4j1dy0f5ta" path="res://environment/assets/materials/dust.tres" id="3_38ml7"]
+[ext_resource type="PackedScene" uid="uid://be21yg8vdh4bq" path="res://characters/player/player.tscn" id="4_60nkf"]
+
+[sub_resource type="Environment" id="Environment_x8mfm"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.400698, 0.400698, 0.400698, 1)
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_curve = 1.54925
+fog_depth_begin = 0.1
+fog_depth_end = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgkd1"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_e31gt"]
+material = SubResource("StandardMaterial3D_hgkd1")
+flip_faces = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nyqnx"]
+emission_shape = 3
+emission_box_extents = Vector3(20, 5, 20)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+gravity = Vector3(-10.095, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+
+[sub_resource type="QuadMesh" id="QuadMesh_twnjg"]
+material = ExtResource("3_38ml7")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="Animation" id="Animation_8c68e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Blackout:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g72of"]
+resource_name = "fadeIn"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/Blackout:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.13333, 5.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/Blackout")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3scqq"]
+_data = {
+"RESET": SubResource("Animation_8c68e"),
+"fadeIn": SubResource("Animation_g72of")
+}
+
+[node name="TrainMap" type="Node3D"]
+script = ExtResource("1_2mn00")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x8mfm")
+
+[node name="Train" parent="." instance=ExtResource("2_xb6ew")]
+
+[node name="DustParticle" parent="Train/train_car" index="0"]
+visible = false
+
+[node name="OpenDoorArea" parent="Train/train_car" index="36"]
+visible = false
+monitoring = false
+
+[node name="CloseDoorArea" parent="Train/train_car" index="37"]
+visible = false
+monitoring = false
+
+[node name="Player" parent="." instance=ExtResource("4_60nkf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 1, 0)
+
+[node name="Blackout" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
+mesh = SubResource("SphereMesh_e31gt")
+
+[node name="Wind" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Wind"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
+amount = 200
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_nyqnx")
+draw_pass_1 = SubResource("QuadMesh_twnjg")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Wind"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 22)
+amount = 200
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_nyqnx")
+draw_pass_1 = SubResource("QuadMesh_twnjg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3scqq")
+}
+autoplay = "fadeIn"
+
+[editable path="Train"]
+[editable path="Train/train_car"]

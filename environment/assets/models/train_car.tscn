@@ -1,0 +1,189 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3gd36icjcqw7"]
+
+[ext_resource type="PackedScene" uid="uid://na05s2qgdrp8" path="res://environment/assets/models/blenderfiles/train_car.blend" id="1_b54ir"]
+[ext_resource type="Material" uid="uid://dyfqqrt6m76kg" path="res://environment/assets/materials/grey.tres" id="2_735kd"]
+[ext_resource type="Script" path="res://environment/assets/models/train_car.gd" id="2_qr5mx"]
+[ext_resource type="PackedScene" uid="uid://dp0b6v13b7vld" path="res://environment/fx/dust_particle.tscn" id="3_5wgpc"]
+[ext_resource type="Material" uid="uid://dmwmkoainiom4" path="res://environment/assets/materials/yellow.tres" id="4_i0dr3"]
+[ext_resource type="Material" uid="uid://dukq2nv7tjaa" path="res://environment/assets/materials/stone_nottriplanar.tres" id="4_pbuuy"]
+[ext_resource type="Material" uid="uid://b1gt6qe4db1jv" path="res://environment/assets/materials/red.tres" id="5_exaln"]
+[ext_resource type="Texture2D" uid="uid://cul8va33kns46" path="res://environment/assets/textures/bluefloor.png" id="5_g7x8w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wexwf"]
+albedo_texture = ExtResource("5_g7x8w")
+uv1_scale = Vector3(8, 4, 4)
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_ah2i7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -4.76508)]
+}
+
+[sub_resource type="Animation" id="Animation_qjucd"]
+resource_name = "doorOpen"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -4.76508), Vector3(5.39489, 0, -4.76508)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3oci8"]
+_data = {
+"RESET": SubResource("Animation_ah2i7"),
+"doorOpen": SubResource("Animation_qjucd")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hr8gm"]
+size = Vector3(4.82, 3.185, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mc518"]
+size = Vector3(7.26449, 3.185, 1)
+
+[node name="train_car" instance=ExtResource("1_b54ir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+script = ExtResource("2_qr5mx")
+
+[node name="DustParticle" parent="." index="0" instance=ExtResource("3_5wgpc")]
+
+[node name="Wall" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_735kd")
+
+[node name="DoorWall" parent="." index="2"]
+material_override = ExtResource("2_735kd")
+
+[node name="Back" parent="." index="3"]
+material_override = ExtResource("2_735kd")
+
+[node name="Front" parent="." index="4"]
+material_override = ExtResource("2_735kd")
+
+[node name="Floor" parent="." index="5"]
+material_override = SubResource("StandardMaterial3D_wexwf")
+
+[node name="Roof" parent="." index="6"]
+material_override = ExtResource("2_735kd")
+
+[node name="Node" type="Node" parent="Roof" index="0"]
+
+[node name="Door" parent="." index="7"]
+transform = Transform3D(-1, 0, -1.50996e-08, 0, 1, 0, 1.50996e-07, 0, -0.1, 0, 0, -4.76508)
+material_override = ExtResource("4_pbuuy")
+
+[node name="Cube" parent="." index="8"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_015" parent="." index="9"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="Cube_016" parent="." index="10"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="Cube_017" parent="." index="11"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="Cube_018" parent="." index="12"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="DoorWallLower" parent="." index="13"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="WallLower" parent="." index="14"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="BackLower" parent="." index="15"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="DoorLower" parent="." index="16"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="FrontLower" parent="." index="17"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="FrontScreen" parent="." index="18"]
+material_override = ExtResource("2_735kd")
+
+[node name="BackDoor" parent="." index="19"]
+material_override = ExtResource("4_pbuuy")
+
+[node name="DoorWall_001" parent="." index="20"]
+material_override = ExtResource("2_735kd")
+
+[node name="DoorWallLower_001" parent="." index="21"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="Cube_002" parent="." index="23"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_003" parent="." index="24"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_004" parent="." index="25"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_005" parent="." index="26"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_006" parent="." index="27"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_009" parent="." index="28"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_010" parent="." index="29"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_013" parent="." index="30"]
+material_override = ExtResource("5_exaln")
+
+[node name="Cube_014" parent="." index="31"]
+material_override = ExtResource("5_exaln")
+
+[node name="Pole" parent="." index="32"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="Pole_002" parent="." index="33"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="Pole_001" parent="." index="34"]
+material_override = ExtResource("4_i0dr3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="35"]
+libraries = {
+"": SubResource("AnimationLibrary_3oci8")
+}
+
+[node name="OpenDoorArea" type="Area3D" parent="." index="36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OpenDoorArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.343351, 1.165)
+shape = SubResource("BoxShape3D_hr8gm")
+
+[node name="CloseDoorArea" type="Area3D" parent="." index="37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CloseDoorArea" index="0"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.84138, -0.343351, 6.42521)
+shape = SubResource("BoxShape3D_mc518")
+
+[connection signal="body_entered" from="OpenDoorArea" to="." method="openDoor"]
+[connection signal="body_entered" from="CloseDoorArea" to="." method="closeDoor"]

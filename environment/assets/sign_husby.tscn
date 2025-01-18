@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs81ui5n34dhw"]
+
+[ext_resource type="Texture2D" uid="uid://clpvh4x7xnq6r" path="res://environment/assets/textures/signfront_husby.png" id="1_qmso2"]
+[ext_resource type="Texture2D" uid="uid://n85xaoyy8l0j" path="res://environment/assets/textures/signfback_husby.png" id="2_co5cd"]
+
+[node name="SignHusby" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.000815183)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("1_qmso2")
+
+[node name="SignBack" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.000903428)
+shaded = true
+double_sided = false
+texture_filter = 0
+texture = ExtResource("2_co5cd")

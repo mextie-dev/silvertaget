@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=3 uid="uid://tgmvmhx4igv1"]
+
+[ext_resource type="Theme" uid="uid://c3mgasxd8q0ud" path="res://ui/game_theme.tres" id="1_rtime"]
+[ext_resource type="Script" path="res://ui/managers/inventory_manager.gd" id="1_urbt6"]
+[ext_resource type="Texture2D" uid="uid://km3gqyaqxpox" path="res://icon.svg" id="3_0g4d8"]
+
+[sub_resource type="Gradient" id="Gradient_27pnq"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_git1d"]
+gradient = SubResource("Gradient_27pnq")
+fill_to = Vector2(1, 1)
+
+[node name="InventoryManager" type="Node2D"]
+script = ExtResource("1_urbt6")
+
+[node name="BackgroundGradient" type="TextureRect" parent="."]
+offset_right = 323.0
+offset_bottom = 242.0
+texture = SubResource("GradientTexture2D_git1d")
+
+[node name="InventoryText" type="MarginContainer" parent="."]
+offset_right = 71.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+
+[node name="Label" type="Label" parent="InventoryText"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "Inventory:"
+
+[node name="Slots" type="MarginContainer" parent="."]
+offset_top = 33.815
+offset_right = 40.0
+offset_bottom = 73.815
+theme_override_constants/margin_left = 5
+
+[node name="SlotContainer" type="VBoxContainer" parent="Slots"]
+layout_mode = 2
+
+[node name="SlotIconContainerOne" type="HBoxContainer" parent="Slots/SlotContainer"]
+layout_mode = 2
+
+[node name="SlotOne" type="Label" parent="Slots/SlotContainer/SlotIconContainerOne"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotOne"
+
+[node name="SlotOneIcon" type="TextureRect" parent="Slots/SlotContainer/SlotIconContainerOne"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_0g4d8")
+expand_mode = 1
+
+[node name="SlotIconContainerTwo" type="HBoxContainer" parent="Slots/SlotContainer"]
+layout_mode = 2
+
+[node name="SlotTwo" type="Label" parent="Slots/SlotContainer/SlotIconContainerTwo"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotTwo"
+
+[node name="SlotTwoIcon" type="TextureRect" parent="Slots/SlotContainer/SlotIconContainerTwo"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_0g4d8")
+expand_mode = 1
+
+[node name="SlotIconContainerThree" type="HBoxContainer" parent="Slots/SlotContainer"]
+layout_mode = 2
+
+[node name="SlotThree" type="Label" parent="Slots/SlotContainer/SlotIconContainerThree"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotThree"
+
+[node name="SlotThreeIcon" type="TextureRect" parent="Slots/SlotContainer/SlotIconContainerThree"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_0g4d8")
+expand_mode = 1
+
+[node name="SlotIconContainerFour" type="HBoxContainer" parent="Slots/SlotContainer"]
+layout_mode = 2
+
+[node name="SlotFour" type="Label" parent="Slots/SlotContainer/SlotIconContainerFour"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotFour"
+
+[node name="SlotFourIcon" type="TextureRect" parent="Slots/SlotContainer/SlotIconContainerFour"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_0g4d8")
+expand_mode = 1
+
+[node name="SlotIconContainerFive" type="HBoxContainer" parent="Slots/SlotContainer"]
+layout_mode = 2
+
+[node name="SlotFive" type="Label" parent="Slots/SlotContainer/SlotIconContainerFive"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotFive"
+
+[node name="SlotFiveIcon" type="TextureRect" parent="Slots/SlotContainer/SlotIconContainerFive"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_0g4d8")
+expand_mode = 1
+
+[node name="SlotIconContainerSix" type="HBoxContainer" parent="Slots/SlotContainer"]
+layout_mode = 2
+
+[node name="SlotSix" type="Label" parent="Slots/SlotContainer/SlotIconContainerSix"]
+layout_mode = 2
+theme = ExtResource("1_rtime")
+text = "SlotSix"
+
+[node name="SlotSixIcon" type="TextureRect" parent="Slots/SlotContainer/SlotIconContainerSix"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("3_0g4d8")
+expand_mode = 1
