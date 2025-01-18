@@ -2,7 +2,7 @@ class_name InventoryItem
 
 extends Resource
 
-# Resource for InventoryItem, included name, id, and icon
+# Resource for InventoryItem, included name, id, icon, size of interactable hitbox, and pickup sound effect
 
 @export var itemName : String
 @export var itemID : int

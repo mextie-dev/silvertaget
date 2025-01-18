@@ -10,6 +10,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# sets lamp color range and energy to instance values
 	lamp_bulb.light_color = color
 	lamp_bulb.omni_range = range
 	lamp_bulb.light_energy = power

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://xox0dkwmhyjj"]
+[gd_scene load_steps=27 format=3 uid="uid://xox0dkwmhyjj"]
 
 [ext_resource type="Material" uid="uid://b45np12ymeg25" path="res://environment/assets/materials/brownfloor.tres" id="1_eqai3"]
 [ext_resource type="PackedScene" uid="uid://be21yg8vdh4bq" path="res://characters/player/player.tscn" id="1_g0cyk"]
@@ -13,10 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://ccb51sqvmqb3s" path="res://environment/assets/deco/lamp.tscn" id="11_x0jdf"]
 [ext_resource type="PackedScene" uid="uid://y5dsevyimjib" path="res://environment/assets/deco/television.tscn" id="12_84r5m"]
 [ext_resource type="PackedScene" uid="uid://v2mavf8n0np5" path="res://environment/assets/deco/door.tscn" id="13_6nw2k"]
+[ext_resource type="PackedScene" uid="uid://dur8m44jowda0" path="res://environment/assets/deco/bed.tscn" id="14_v3abp"]
 
 [sub_resource type="Environment" id="Environment_nw3xm"]
 background_mode = 1
-background_color = Color(0.947199, 0.947199, 0.947199, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.180005, 0.180005, 0.180005, 1)
 fog_mode = 1
@@ -147,7 +147,7 @@ skeleton = NodePath("../../..")
 shape = SubResource("ConcavePolygonShape3D_oq4es")
 
 [node name="Wall6" type="MeshInstance3D" parent="Environment/Walls"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18, 4, -7)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 18, 4, -6.03987)
 material_override = ExtResource("5_kaj3g")
 mesh = SubResource("BoxMesh_3bvt6")
 skeleton = NodePath("../../..")
@@ -191,7 +191,7 @@ skeleton = NodePath("../../..")
 shape = SubResource("ConcavePolygonShape3D_n5sij")
 
 [node name="Wall7" type="MeshInstance3D" parent="Environment/Walls"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, 4, 1)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.65655, 4, 1)
 material_override = ExtResource("5_kaj3g")
 mesh = SubResource("BoxMesh_3bvt6")
 skeleton = NodePath("../../..")
@@ -199,6 +199,28 @@ skeleton = NodePath("../../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/Walls/Wall7"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Walls/Wall7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5k82r")
+
+[node name="Wall18" type="MeshInstance3D" parent="Environment/Walls"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.59057, 11, 1)
+material_override = ExtResource("5_kaj3g")
+mesh = SubResource("BoxMesh_3bvt6")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Walls/Wall18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Walls/Wall18/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5k82r")
+
+[node name="Wall19" type="MeshInstance3D" parent="Environment/Walls"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4.59057, -0.611784, 1)
+material_override = ExtResource("5_kaj3g")
+mesh = SubResource("BoxMesh_3bvt6")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Walls/Wall19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Walls/Wall19/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5k82r")
 
 [node name="Wall8" type="MeshInstance3D" parent="Environment/Walls"]
@@ -337,7 +359,7 @@ omni_range = 3.61
 [node name="Stringlights" type="Node3D" parent="."]
 
 [node name="StringLights" parent="Stringlights" instance=ExtResource("6_5c4yc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -6.80718)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -5.84705)
 
 [node name="StringLights10" parent="Stringlights" instance=ExtResource("6_5c4yc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.47678, 1.4915, -16.899)
@@ -355,16 +377,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51849, 5.28945, -18.4458)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681736, 5.28945, -18.4458)
 
 [node name="StringLights16" parent="Stringlights" instance=ExtResource("6_5c4yc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.3474, 5.28945, -5.92848)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.47088, 5.28945, -5.92848)
 
 [node name="StringLights11" parent="Stringlights" instance=ExtResource("6_5c4yc")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0964484, 1.4915, -18.4974)
 
 [node name="StringLights3" parent="Stringlights" instance=ExtResource("6_5c4yc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -10.0098)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -9.05038)
 
 [node name="StringLights2" parent="Stringlights" instance=ExtResource("6_5c4yc")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -3.60443)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.4973, 1.4915, -2.6443)
 
 [node name="StringLights4" parent="Stringlights" instance=ExtResource("7_ou2yw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.5038, 5.35058, -4.30797)
@@ -374,6 +396,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.503
 
 [node name="StringLights8" parent="Stringlights" instance=ExtResource("7_ou2yw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4946, 5.73653, -3.3994)
+
+[node name="StringLights17" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.477, 5.4949, -2.72581)
+
+[node name="StringLights18" parent="Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.43804, 5.49438, 0.463189)
+
+[node name="StringLights19" parent="Stringlights" instance=ExtResource("7_ou2yw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165434, 4.98321, 0.481267)
 
 [node name="StringLights9" parent="Stringlights" instance=ExtResource("7_ou2yw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4946, 5.94983, -0.199087)
@@ -413,6 +444,15 @@ transform = Transform3D(1.385, 0, 0, 0, 1.385, 0, 0, 0, 1.385, -0.13766, 0, -18.
 [node name="TrashBag9" parent="Trash" instance=ExtResource("8_pl7jm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16482, -1.19209e-07, -17.0893)
 
+[node name="TrashBag10" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1.555, 0, 0, 0, 1.555, 0, 0, 0, 1.555, 12.0182, 3.75476, -18.1875)
+
+[node name="TrashBag11" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.949, 3.75476, -18.3125)
+
+[node name="TrashBag12" parent="Trash" instance=ExtResource("8_pl7jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9409, 3.75476, -17.3037)
+
 [node name="Couches" type="Node3D" parent="."]
 
 [node name="Couch" parent="Couches" instance=ExtResource("9_064wc")]
@@ -449,6 +489,10 @@ color = Color(0.643984, 1, 0.805065, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4398, 3.75476, 5.34028)
 color = Color(0.281915, 0.787898, 0.881119, 1)
 
+[node name="Lamp3" parent="." instance=ExtResource("11_x0jdf")]
+transform = Transform3D(1, 0, 0, 0, 0.0058991, 0.999983, 0, -0.999983, 0.0058991, 12.0856, 4.24087, -14.3835)
+color = Color(0.946169, 0.605474, 0.606046, 1)
+
 [node name="tvset" parent="." instance=ExtResource("12_84r5m")]
 transform = Transform3D(-2.07629e-08, 0, 0.475, 0, 0.475, 0, -0.475, 0, -2.07629e-08, 6.7234, 1.28806, -13.2546)
 
@@ -457,3 +501,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.3, 
 
 [node name="Door2" parent="." instance=ExtResource("13_6nw2k")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.3, 5, -8.51732)
+
+[node name="Door3" parent="." instance=ExtResource("13_6nw2k")]
+transform = Transform3D(-4.83011e-08, 0, -1.105, 0, 1.105, 0, 1.105, 0, -4.83011e-08, 17.5623, 1, -1.21675)
+locked = true
+
+[node name="Bed" parent="." instance=ExtResource("14_v3abp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.999436, 3.75476, -1.03332)
+
+[editable path="Door3"]

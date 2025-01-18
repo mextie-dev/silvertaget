@@ -20,11 +20,15 @@ signal interactedWithItem(item)
 signal interactedWithDoor(door)
 
 func _ready() -> void:
+	
+	# capture the mouse and initialize the input direction vector idk why im doing this here but whatever
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
 		
 
+## manage opening inventory screen, also every time input is pressed run a raycast scan instead of doing it every fram
+# (i have no idea if this is faster but hopefully it is because it causes a lot of bugs but i dont wanna refactor it)
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("open_inventory"):
 		if inventoryOpen:
@@ -39,6 +43,8 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
 		raycastScans()
 
+## i put all the actual player input and mouse movement in unhandledinput becuase i thought it would fix a bug but it didnt
+## however it didnt hurt anything so whateverrrrrrrrrrrrrrrrrrrrr
 func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseMotion:
@@ -53,6 +59,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	
 
+## do phisicks
 func _physics_process(delta: float) -> void:
 	
 	if inventoryOpen:
@@ -62,7 +69,6 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = (direction.x * speed)
@@ -71,10 +77,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 	
+	# this makes the moving train part work
 	get_platform_velocity()
 
 	move_and_slide()
 
+## gets the raycast collider on interaction and passes it to different places based on what it is
 func raycastScans():
 	var currentCollider = interact_cast.get_collider()
 	if interact_cast.is_colliding():

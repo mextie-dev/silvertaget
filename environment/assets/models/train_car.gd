@@ -8,7 +8,7 @@ var isDoorOpen := false
 
 signal startMoving
 
-
+## opens the train door
 func openDoor(body):
 	if isDoorOpen:
 		return
@@ -16,6 +16,7 @@ func openDoor(body):
 		animation_player.play("doorOpen")
 		isDoorOpen = true
 
+## closes the train door
 func closeDoor(body):
 	if !isDoorOpen:
 		return

@@ -20,7 +20,8 @@ func _ready() -> void:
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+## because im a bad coder all the logic for this map is handled in process instead of its own function
+## but this basically just gets the amount of times youve teleported and changes the sign and if the key is visible based on that
 func _process(delta: float) -> void:
 	if !trainArrived:
 		if timesTeleported == 0:
@@ -57,6 +58,8 @@ func _process(delta: float) -> void:
 		else:
 			print("den här är fucked")
 
+#region Teleport code, loops the station and increments the times teleported
+
 func teleportPlayerPositiveZ(body):
 	if body == player:
 		if timesTeleported < 4:
@@ -76,12 +79,14 @@ func teleportPlayerNegativeZ(body):
 			timesTeleported += 1
 		else:
 			player.position.z = player.position.z - 80
-	
-	
+#endregion
+
+## called when player has teleported four times
 func trainArrives():
 	print("den här är när tåget kommer")
 	arrive()
 
+## starts the train movement cutscene
 func startMoving():
 	#if body == player:
 	animation_player.speed_scale = 0.0
@@ -89,17 +94,20 @@ func startMoving():
 	var tween = get_tree().create_tween()
 	tween.tween_property(animation_player, "speed_scale", 1, 10)
 
+## actually makes the train arrive i have no idea why this is in two functions im so fucking bad at coding
 func arrive():
 	animation_player.speed_scale = 1
 	animation_player.play_backwards("start")
 	var tween = get_tree().create_tween()
 	tween.tween_property(animation_player, "speed_scale", 0.2, 15)
 
+## disables the platform barrier when the train arrives
 func disableBarrier(anim):
 	if anim == "start":
 		print("worked")
 		$DoorBarrier.process_mode = Node.PROCESS_MODE_DISABLED
 
+## exits the area when the train has gone for long enough
 func exitArea(body):
 	if body == player:
 		animation_player.play("fadeOut")

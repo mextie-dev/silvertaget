@@ -1,7 +1,5 @@
 extends Node2D
 
-#var items = Array[InventoryItem]
-
 # text slots for items
 @onready var slot_one: Label = $Slots/SlotContainer/SlotIconContainerOne/SlotOne
 @onready var slot_two: Label = $Slots/SlotContainer/SlotIconContainerTwo/SlotTwo
@@ -21,11 +19,12 @@ extends Node2D
 var itemSlots = []
 var itemIcons = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	# get all items in the current scene and store them
 	var itemsInScene = get_tree().get_nodes_in_group("items")
 	
+	# convert all references in itemsInScene array to the actual item parent, then connect interaction signal
 	for item in len(itemsInScene):
 		itemsInScene[item] = itemsInScene[item].get_parent()
 		itemsInScene[item].interactedItem.connect(addItem)
@@ -40,7 +39,7 @@ func _ready() -> void:
 	
 	# clear the inventory, set all item slot text and item icons to empty
 	for slot in len(itemSlots):
-		print(itemSlots[slot])
+		#print(itemSlots[slot])
 		itemSlots[slot].text = " "
 		itemIcons[slot].texture = null
 		slot += 1
@@ -57,7 +56,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-
+## clear the player inventory, only called in special circumstances or for testing
 func clearInventory():
 	PlayerVariables.items.clear()
 	print("erased yuh shit lilbro")
@@ -66,11 +65,19 @@ func clearInventory():
 		itemSlots[slot].text = " "
 		slot += 1
 
+## adds an item to the players displayed inventory and stores it to be persistent across scenes
 func addItem(stats):
+	
+	# if the players inventory is full, do nothing
 	if len(PlayerVariables.items) == 6:
 		print("fucky wucky inventory full")
 		return
+		
+	# add the item to the global items array so it can be reestablished across scenes
 	PlayerVariables.items.append(stats)
+	
+	# loops over the item slots until it finds an empty slot (indicated by " "), then sets that slot to contain the text
+	# and icon for the item to be added. failsafes for if the inventory is full
 	var currentSlot = 0
 	for slot in len(itemSlots):
 		if itemSlots[slot].text != " ":
@@ -92,13 +99,22 @@ func addItem(stats):
 		)
 	#print("current inv" + str(items))
 	pass
-	
+
+
+## removes an item from the displayed inventory and the global items array
 func removeItem(stats):
+	
+	# remove from the items array
 	PlayerVariables.items.erase(stats)
+	
+	# search through inventory until it finds the item to be destroyed, then sets its slot to empty
 	for slot in len(itemSlots):
 		if itemSlots[slot].text == stats.itemName:
 			itemSlots[slot].text = " "
 			itemIcons[slot].texture = null
+			
+			# goes through each item slot and moves the item slots up so the displayed inventory appears correctly
+			# stops when it reaches the end of the current lenght of the items array
 			for i in len(itemSlots):
 				if i == len(PlayerVariables.items):
 					break
