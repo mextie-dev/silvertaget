@@ -45,9 +45,18 @@ func _input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			inventoryOpen = true
 			
-	if Input.is_action_just_pressed("interact"):
-		return
+	if Input.is_action_just_pressed("fullscreen"):
+		fullscreen()
 	
+
+
+
+func fullscreen():
+	var fs = DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
+	if fs:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 
 ## i put all the actual player input and mouse movement in unhandledinput becuase i thought it would fix a bug but it didnt

@@ -13,13 +13,15 @@ func _ready() -> void:
 	
 	var charsInScene = get_tree().get_nodes_in_group("characters")
 	
-	# convert all references in itemsInScene array to the actual item parent, then connect interaction signal
+	# convert all references in charsInScene array to the actual char parent, then connect interaction signal
 	for char in len(charsInScene):
 		charsInScene[char] = charsInScene[char].get_parent()
 		charsInScene[char].triggerDialogue.connect(showDialogue)
 
-# Called when the node enters the scene tree for the first time.
+
 func showDialogue(charName : String, dialogue : PackedStringArray, textSound : AudioStream, currentLine : int, lastLine : int):
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	show()
 	print(lastLine)
 	if currentLine >= lastLine:
@@ -47,13 +49,14 @@ func showDialogue(charName : String, dialogue : PackedStringArray, textSound : A
 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(InputEvent):
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("advance_dialogue"):
 		dialogue_display.visible_characters = 0
 		
 		hide()
 		get_tree().paused = false
 		await get_tree().process_frame
 		player.isInDialogue = false
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 		pass

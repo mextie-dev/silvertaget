@@ -1,11 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://xox0dkwmhyjj"]
+[gd_scene load_steps=29 format=3 uid="uid://xox0dkwmhyjj"]
 
 [ext_resource type="Material" uid="uid://b45np12ymeg25" path="res://environment/assets/materials/brownfloor.tres" id="1_eqai3"]
 [ext_resource type="PackedScene" uid="uid://be21yg8vdh4bq" path="res://characters/player/player.tscn" id="1_g0cyk"]
 [ext_resource type="Script" path="res://environment/maps/white_house.gd" id="1_w63ts"]
 [ext_resource type="PackedScene" uid="uid://bdib7xl6r8wkr" path="res://environment/assets/models/blenderfiles/stairs.tscn" id="3_fq07p"]
 [ext_resource type="Material" uid="uid://dj6bavc0aiu0i" path="res://environment/assets/materials/stone.tres" id="5_kaj3g"]
-[ext_resource type="PackedScene" uid="uid://cl7iyptcqmqae" path="res://characters/character.tscn" id="5_ypwlg"]
 [ext_resource type="PackedScene" uid="uid://bfplghgmmsrvk" path="res://environment/assets/deco/string_lights.tscn" id="6_5c4yc"]
 [ext_resource type="PackedScene" uid="uid://cghatiavxm0hy" path="res://environment/assets/deco/string_lights_green.tscn" id="7_ou2yw"]
 [ext_resource type="PackedScene" uid="uid://bsqq01p34ayr5" path="res://environment/assets/deco/table.tscn" id="8_megow"]
@@ -460,6 +459,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70499, 5.28945, -18.4458)
 [node name="StringLights14" parent="Decoration/Stringlights" instance=ExtResource("6_5c4yc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51849, 5.28945, -18.4458)
 
+[node name="StringLights21" parent="Decoration/Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5179, 5.28945, -18.0688)
+
+[node name="StringLights22" parent="Decoration/Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5179, 5.28945, -14.868)
+
+[node name="StringLights23" parent="Decoration/Stringlights" instance=ExtResource("6_5c4yc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.5179, 5.28945, -11.6815)
+
 [node name="StringLights15" parent="Decoration/Stringlights" instance=ExtResource("6_5c4yc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681736, 5.28945, -18.4458)
 
@@ -590,8 +598,5 @@ color = Color(0.281915, 0.787898, 0.881119, 1)
 [node name="Lamp3" parent="Decoration/Lamps" instance=ExtResource("11_x0jdf")]
 transform = Transform3D(1, 0, 0, 0, 0.0058991, 0.999983, 0, -0.999983, 0.0058991, 12.0856, 4.24087, -14.3835)
 color = Color(0.946169, 0.605474, 0.606046, 1)
-
-[node name="Character" parent="." instance=ExtResource("5_ypwlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185124, 1.20505, -4.60526)
 
 [editable path="Doors/Door3"]

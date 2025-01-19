@@ -10,7 +10,7 @@ extends Node
 
 @export var stats : CharacterDialogue
 
-signal triggerDialogue(dialogue, dialogue_sound)
+signal triggerDialogue(displayname, dialogue, dialogue_sound, talkedtoamount, lastline)
 
 var talkedTo := 0
 
