@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_bcnrw")
-itemName = "Silver Key"
+itemName = "Silver Nyckel"
 itemID = 0
 icon = ExtResource("1_tw28d")
 hitbox_size = Vector3(0.5, 0.5, 0.5)

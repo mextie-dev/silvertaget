@@ -13,11 +13,16 @@ extends CharacterBody3D
 
 var inventoryOpen := false
 
+var isInDialogue := false
+
 var facingDoor := false
 
 signal interactedWithItem(item)
 
 signal interactedWithDoor(door)
+
+signal interactedWithChar(character)
+
 
 func _ready() -> void:
 	
@@ -39,9 +44,11 @@ func _input(event: InputEvent) -> void:
 			inventory_manager.show()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			inventoryOpen = true
-	
+			
 	if Input.is_action_just_pressed("interact"):
-		raycastScans()
+		return
+	
+
 
 ## i put all the actual player input and mouse movement in unhandledinput becuase i thought it would fix a bug but it didnt
 ## however it didnt hurt anything so whateverrrrrrrrrrrrrrrrrrrrr
@@ -55,8 +62,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera_3d.rotation_degrees.x = clamp(camera_3d.rotation_degrees.x, -90, 90)
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-
-		
+	if Input.is_action_just_pressed("interact"):
+		if get_tree().paused:
+			return
+		raycastScans()
 	
 
 ## do phisicks
@@ -64,6 +73,10 @@ func _physics_process(delta: float) -> void:
 	
 	if inventoryOpen:
 		return
+		
+	if isInDialogue:
+		return
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -84,6 +97,8 @@ func _physics_process(delta: float) -> void:
 
 ## gets the raycast collider on interaction and passes it to different places based on what it is
 func raycastScans():
+	if isInDialogue:
+		return
 	var currentCollider = interact_cast.get_collider()
 	if interact_cast.is_colliding():
 		if currentCollider.is_in_group("items"):
@@ -92,3 +107,7 @@ func raycastScans():
 		if currentCollider.is_in_group("doors"):
 			print("hitting door")
 			interactedWithDoor.emit(currentCollider)
+		if currentCollider.is_in_group("characters"):
+			print("hitting character")
+			interactedWithChar.emit(currentCollider)
+			get_tree().paused = true

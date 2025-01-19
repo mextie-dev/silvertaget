@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://dveefpbeqaoh3"]
+
+[ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_ds170"]
+[ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_pnurn"]
+
+[resource]
+script = ExtResource("1_ds170")
+texture = ExtResource("2_pnurn")
+head_height = 1.5
+disp_name = "TestMan"
+dialogue = PackedStringArray("This is the test dialogue", "It should show up in order", "Just like this", "And repeat this line")
+lastLine = 4

@@ -36,6 +36,7 @@ project/assembly_name="Silvertåget"
 player="the player"
 items=""
 doors="doors"
+characters="character objects"
 
 [importer_defaults]
 

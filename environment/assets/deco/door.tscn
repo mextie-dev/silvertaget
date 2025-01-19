@@ -30,9 +30,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.858687, 0, 0)
 [node name="DoorLockedSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.858687, 0, 0)
 
+[node name="DoorStuckSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.858687, 0, 0)
+
 [node name="LockedText" type="Label" parent="."]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme = ExtResource("3_hyh88")
 text = "Locked"
+
+[node name="StuckText" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("3_hyh88")
+text = "Stuck"

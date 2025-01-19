@@ -12,6 +12,7 @@ gradient = SubResource("Gradient_27pnq")
 fill_to = Vector2(1, 1)
 
 [node name="InventoryManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_urbt6")
 
 [node name="BackgroundGradient" type="TextureRect" parent="."]
@@ -27,7 +28,7 @@ theme_override_constants/margin_left = 5
 [node name="Label" type="Label" parent="InventoryText"]
 layout_mode = 2
 theme = ExtResource("1_rtime")
-text = "Inventory:"
+text = "Förråd:"
 
 [node name="Slots" type="MarginContainer" parent="."]
 offset_top = 33.815
