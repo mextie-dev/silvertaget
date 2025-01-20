@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://c604tivdm60mc"]
+
+[ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_ec00j"]
+[ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_ylm5j"]
+
+[resource]
+script = ExtResource("1_ec00j")
+texture = ExtResource("2_ylm5j")
+head_height = 1.5
+disp_name = "Wilhelm"
+dialogue = PackedStringArray("Oh hey, do you own this house?", "No? Damn, worth a shot.", "I\'m trying to figure out how to get another channel on this thing.", "Nothing wrong with this per se, I just don\'t like shoegaze.", "Let me know if you can figure it out.")
+lastLine = 5

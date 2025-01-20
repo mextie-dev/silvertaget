@@ -50,7 +50,7 @@ func showDialogue(charName : String, dialogue : PackedStringArray, textSound : A
 
 
 func _input(InputEvent):
-	if !player.isInDialogue:
+	if !visible:
 		return
 	if Input.is_action_just_pressed("advance_dialogue"):
 		dialogue_display.visible_characters = 0

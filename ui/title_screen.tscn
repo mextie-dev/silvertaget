@@ -1091,16 +1091,16 @@ texture_normal = ExtResource("20_fajqm")
 visible = false
 layout_mode = 1
 
-[node name="Play" type="Button" parent="OptionsScreen"]
-offset_left = 10.0
-offset_top = 95.0
-offset_right = 70.0
-offset_bottom = 115.0
-text = "Spela"
+[node name="Back" type="Button" parent="OptionsScreen"]
+offset_left = 233.0
+offset_top = 76.0
+offset_right = 312.0
+offset_bottom = 96.0
+text = "Tillbacka"
 
 [connection signal="pressed" from="TitleScreenUI/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="TitleScreenUI/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="TitleScreenUI/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="TitleScreenUI/EngLangButton" to="." method="_on_eng_lang_button_pressed"]
 [connection signal="pressed" from="TitleScreenUI/SveLangButton" to="." method="_on_sve_lang_button_pressed"]
-[connection signal="pressed" from="OptionsScreen/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="OptionsScreen/Back" to="." method="_on_back_pressed"]

@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="Silvertåget"
-run/main_scene="res://environment/maps/test_station.tscn"
+run/main_scene="res://ui/title_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://splashscreen.png"
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerVariables="*res://player_variables.gd"
-Global="*res://global.gd"
-Options="*res://options.gd"
+PlayerVariables="*res://characters/player/player_variables.gd"
+Global="*res://scripts/global.gd"
+Options="*res://scripts/options.gd"
 
 [display]
 

@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(281, 215)]
+"values": [Vector2(281, 225.625)]
 }
 
 [sub_resource type="Animation" id="Animation_d7rte"]
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(281, 215), Vector2(289.325, 215)]
+"values": [Vector2(281, 198), Vector2(289.325, 198)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k6m2o"]
@@ -56,20 +56,20 @@ autowrap_mode = 3
 
 [node name="Box" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(161, 190)
-scale = Vector2(2, 3)
+position = Vector2(161, 181.75)
+scale = Vector2(2, 2.34)
 texture = ExtResource("2_juun2")
 
 [node name="Name" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(64, 140)
-scale = Vector2(0.7, 0.704)
+position = Vector2(73.25, 140)
+scale = Vector2(0.823333, 0.704)
 texture = ExtResource("2_juun2")
 
 [node name="NameBoxCenterer" type="CenterContainer" parent="."]
 offset_left = 12.0
 offset_top = 132.0
-offset_right = 116.0
+offset_right = 135.0
 offset_bottom = 149.0
 
 [node name="DispName" type="Label" parent="NameBoxCenterer"]
@@ -79,7 +79,7 @@ theme_override_font_sizes/font_size = 17
 text = "Thaddeus"
 
 [node name="AdvanceArrow" type="Sprite2D" parent="."]
-position = Vector2(281, 215)
+position = Vector2(281, 225.625)
 texture = ExtResource("4_82pw2")
 
 [node name="AdvanceArrowAnimation" type="AnimationPlayer" parent="AdvanceArrow"]

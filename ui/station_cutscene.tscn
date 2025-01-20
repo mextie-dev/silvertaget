@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1n12uih7yecc"]
+[gd_scene load_steps=9 format=3 uid="uid://f4rdvuiqjy4h"]
 
-[ext_resource type="FontFile" uid="uid://dyey72dxo5hd2" path="res://ui/8bitoperatorSven.ttf" id="1_3hcht"]
-[ext_resource type="Script" path="res://ui/opening_cutscene.gd" id="1_4ioc7"]
-[ext_resource type="FontFile" uid="uid://dnl674pxdrsuv" path="res://ui/8bitoperator_jve.ttf" id="1_qoc5m"]
+[ext_resource type="Script" path="res://ui/opening_cutscene.gd" id="1_xge6v"]
+[ext_resource type="FontFile" uid="uid://dyey72dxo5hd2" path="res://ui/8bitoperatorSven.ttf" id="2_5eoiu"]
+[ext_resource type="FontFile" uid="uid://dnl674pxdrsuv" path="res://ui/8bitoperator_jve.ttf" id="3_hwxsr"]
 
 [sub_resource type="Animation" id="Animation_3gosy"]
 length = 0.001
@@ -93,7 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4ioc7")
+script = ExtResource("1_xge6v")
 scene = "res://environment/maps/white_house.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -106,15 +106,16 @@ grow_vertical = 2
 
 [node name="KÄTFF" type="Label" parent="CenterContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_3hcht")
-text = "Klockan är 2.00"
+theme_override_fonts/font = ExtResource("2_5eoiu")
+text = "Klockan är 2.55"
 horizontal_alignment = 1
 
 [node name="DKHFENF" type="Label" parent="CenterContainer"]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qoc5m")
-text = "Du är på en fest i Stockholm"
+theme_override_fonts/font = ExtResource("3_hwxsr")
+text = "Du kommer hem från en fest
+i Stockholm"
 horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

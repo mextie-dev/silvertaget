@@ -41,3 +41,8 @@ func _on_eng_lang_button_pressed() -> void:
 func _on_sve_lang_button_pressed() -> void:
 	print("language switched to swedish")
 	# TODO: figure out how tf to translate the game
+
+
+func _on_back_pressed() -> void:
+	$OptionsScreen.hide()
+	$TitleScreenUI.show()
