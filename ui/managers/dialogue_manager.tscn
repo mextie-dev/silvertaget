@@ -5,6 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://8nwxter8ks1" path="res://environment/assets/textures/advancearrow.png" id="4_82pw2"]
 [ext_resource type="FontFile" uid="uid://dyey72dxo5hd2" path="res://ui/8bitoperatorSven.ttf" id="4_jwc7o"]
 
+[sub_resource type="Animation" id="Animation_ldcnx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(281, 215)]
+}
+
 [sub_resource type="Animation" id="Animation_d7rte"]
 resource_name = "bob"
 loop_mode = 2
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(281, 215), Vector2(289.325, 215)]
-}
-
-[sub_resource type="Animation" id="Animation_ldcnx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(281, 215)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k6m2o"]

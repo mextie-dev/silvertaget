@@ -7,9 +7,11 @@ extends CharacterBody3D
 
 @export var speed = 5
 
-@export var mouseSensitivity = 1
+var mouseSensitivity : float
 
 @onready var input_dir
+
+var optionsOpen := false
 
 var inventoryOpen := false
 
@@ -30,7 +32,6 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-		
 
 ## manage opening inventory screen, also every time input is pressed run a raycast scan instead of doing it every fram
 # (i have no idea if this is faster but hopefully it is because it causes a lot of bugs but i dont wanna refactor it)
@@ -47,6 +48,20 @@ func _input(event: InputEvent) -> void:
 			
 	if Input.is_action_just_pressed("fullscreen"):
 		fullscreen()
+		
+	
+	if Input.is_action_just_pressed("options"):
+		if $OptionsScreen.visible:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
+			$OptionsScreen.visible = not $OptionsScreen.visible
+			optionsOpen = false
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			
+			$OptionsScreen.visible = not $OptionsScreen.visible
+			optionsOpen = true
+			
 	
 
 
@@ -80,10 +95,16 @@ func _unhandled_input(event: InputEvent) -> void:
 ## do phisicks
 func _physics_process(delta: float) -> void:
 	
+	mouseSensitivity = Options.mouseSensitivity
+	
+	
 	if inventoryOpen:
 		return
 		
 	if isInDialogue:
+		return
+		
+	if optionsOpen:
 		return
 		
 	# Add the gravity.
@@ -107,6 +128,8 @@ func _physics_process(delta: float) -> void:
 ## gets the raycast collider on interaction and passes it to different places based on what it is
 func raycastScans():
 	if isInDialogue:
+		return
+	if optionsOpen:
 		return
 	var currentCollider = interact_cast.get_collider()
 	if interact_cast.is_colliding():

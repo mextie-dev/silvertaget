@@ -1,7 +1,37 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c3mgasxd8q0ud"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c3mgasxd8q0ud"]
 
 [ext_resource type="FontFile" uid="uid://dyey72dxo5hd2" path="res://ui/8bitoperatorSven.ttf" id="1_r35xk"]
+[ext_resource type="Texture2D" uid="uid://ds6rq5b2u6ajc" path="res://environment/assets/textures/slidertextures/grey.png" id="1_wj4j5"]
+[ext_resource type="Texture2D" uid="uid://c4b23ugmuf3oc" path="res://environment/assets/textures/slidertextures/black.png" id="2_runm6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er45i"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnnhk"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sifq"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x30yn"]
+bg_color = Color(0.105588, 0.113471, 0.11011, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
 
 [resource]
 default_font = ExtResource("1_r35xk")
 default_font_size = 0
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_er45i")
+Button/styles/hover = SubResource("StyleBoxFlat_vnnhk")
+Button/styles/normal = SubResource("StyleBoxFlat_7sifq")
+Button/styles/pressed = SubResource("StyleBoxFlat_x30yn")
+HSlider/icons/grabber = ExtResource("1_wj4j5")
+HSlider/icons/grabber_disabled = ExtResource("1_wj4j5")
+HSlider/icons/grabber_highlight = ExtResource("2_runm6")

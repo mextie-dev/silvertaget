@@ -1,0 +1,104 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbq060sp8jofn"]
+
+[ext_resource type="Theme" uid="uid://c3mgasxd8q0ud" path="res://ui/game_theme.tres" id="1_li13e"]
+[ext_resource type="Script" path="res://ui/options_screen.gd" id="2_lmabm"]
+
+[sub_resource type="Gradient" id="Gradient_v10nc"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6ee2c"]
+gradient = SubResource("Gradient_v10nc")
+height = 26
+
+[node name="OptionsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_li13e")
+script = ExtResource("2_lmabm")
+
+[node name="Title" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="Silvertagettitle" type="Label" parent="Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 51
+text = "Silvertåget"
+
+[node name="MouseSens" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 109.0
+offset_right = 146.0
+offset_bottom = 155.0
+
+[node name="TextureRect" type="TextureRect" parent="MouseSens"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_6ee2c")
+
+[node name="CenterContainer" type="CenterContainer" parent="MouseSens/TextureRect"]
+layout_mode = 0
+offset_right = 142.0
+offset_bottom = 26.0
+
+[node name="Label" type="Label" parent="MouseSens/TextureRect/CenterContainer"]
+layout_mode = 2
+text = "Mouse Sensitivity"
+
+[node name="MouseSensSlider" type="HSlider" parent="MouseSens"]
+layout_mode = 2
+min_value = 0.1
+max_value = 2.0
+step = 0.1
+value = 0.1
+
+[node name="AudioVol" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 109.0
+offset_right = 312.0
+offset_bottom = 155.0
+
+[node name="TextureRect" type="TextureRect" parent="AudioVol"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_6ee2c")
+
+[node name="CenterContainer" type="CenterContainer" parent="AudioVol/TextureRect"]
+layout_mode = 0
+offset_right = 142.0
+offset_bottom = 26.0
+
+[node name="Label" type="Label" parent="AudioVol/TextureRect/CenterContainer"]
+layout_mode = 2
+text = "Audio Volume"
+
+[node name="AudioVolSlider" type="HSlider" parent="AudioVol"]
+layout_mode = 2
+
+[node name="FullscreenButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 190.0
+offset_right = 118.0
+offset_bottom = 207.0
+text = "Fullscreen"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 190.0
+offset_right = 288.0
+offset_bottom = 207.0
+text = "Avsluta"
+
+[connection signal="value_changed" from="MouseSens/MouseSensSlider" to="." method="setMouseSensitivity"]
+[connection signal="value_changed" from="AudioVol/AudioVolSlider" to="." method="setAudioVolume"]
+[connection signal="pressed" from="FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

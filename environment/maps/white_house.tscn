@@ -599,4 +599,5 @@ color = Color(0.281915, 0.787898, 0.881119, 1)
 transform = Transform3D(1, 0, 0, 0, 0.0058991, 0.999983, 0, -0.999983, 0.0058991, 12.0856, 4.24087, -14.3835)
 color = Color(0.946169, 0.605474, 0.606046, 1)
 
+[editable path="Player"]
 [editable path="Doors/Door3"]
