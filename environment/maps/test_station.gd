@@ -11,14 +11,25 @@ var trainArrived := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#arrive()
+	#var tween = get_tree().create_tween()
+	
+	fadeOutFog()
+	
 	$SilverKey.hide()
 	$SilverKey.process_mode = Node.PROCESS_MODE_DISABLED
 	
-	world_environment.environment.fog_enabled = true
+	
+	
+	#tween.tween_property(world_environment.environment, "fog_depth_end", 10, 7)
 	
 	pass
 
+func fadeOutFog():
+	var tween = get_tree().create_tween()
+	world_environment.environment.fog_enabled = true
+	world_environment.environment.fog_depth_end = 1
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(world_environment.environment, "fog_depth_end", 10, 7)
 
 ## because im a bad coder all the logic for this map is handled in process instead of its own function
 ## but this basically just gets the amount of times youve teleported and changes the sign and if the key is visible based on that

@@ -20,10 +20,11 @@ size = Vector3(1, 13.87, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3u68k"]
 size = Vector3(1, 13.87, 32)
 
-[sub_resource type="Environment" id="Environment_5cjoe"]
+[sub_resource type="Environment" id="Environment_htdjj"]
 background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(0.400698, 0.400698, 0.400698, 1)
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
@@ -61,18 +62,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(13.769, 1.296, -971.464)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WorldEnvironment:environment:fog_depth_end")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [10.0]
 }
 
 [sub_resource type="Animation" id="Animation_srlcm"]
@@ -137,7 +126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 shape = SubResource("BoxShape3D_3u68k")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_5cjoe")
+environment = SubResource("Environment_htdjj")
 
 [node name="Structure" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
