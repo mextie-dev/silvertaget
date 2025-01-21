@@ -1092,6 +1092,7 @@ visible = false
 layout_mode = 1
 
 [node name="Back" type="Button" parent="OptionsScreen"]
+layout_mode = 0
 offset_left = 233.0
 offset_top = 76.0
 offset_right = 312.0

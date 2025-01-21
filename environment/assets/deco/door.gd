@@ -26,19 +26,19 @@ func open(door):
 		
 		# if locked show locked text
 		if locked:
-			$StuckText.visible = not visible
-			$LockedText.show()
+			$MarginContainer/StuckText.visible = not visible
+			$MarginContainer/LockedText.show()
 			$DoorLockedSound.play()
 			await get_tree().create_timer(3).timeout
-			$LockedText.hide()
+			$MarginContainer/LockedText.hide()
 			return
 		# PLEASE I BEG YOU
 		if stuck:
-			$LockedText.visible = not visible
-			$StuckText.show()
+			$MarginContainer/LockedText.visible = not visible
+			$MarginContainer/StuckText.show()
 			$DoorStuckSound.play()
 			await get_tree().create_timer(3).timeout
-			$StuckText.hide()
+			$MarginContainer/StuckText.hide()
 			return
 		
 		# play door open animation, close after 10 seconds

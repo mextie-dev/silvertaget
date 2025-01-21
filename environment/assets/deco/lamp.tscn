@@ -4,6 +4,7 @@
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_k25vo"]
 height = 0.1
+radial_segments = 4
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_is8ks"]
 top_radius = 0.1

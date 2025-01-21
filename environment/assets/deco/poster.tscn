@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbqksad8dx6da"]
+
+[ext_resource type="Script" path="res://poster.gd" id="1_oj6uc"]
+
+[node name="Poster" type="Decal"]
+script = ExtResource("1_oj6uc")
