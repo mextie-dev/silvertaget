@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://phdr24o5768g"]
+
+[ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_s1837"]
+[ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_1bter"]
+
+[resource]
+script = ExtResource("1_s1837")
+texture = ExtResource("2_1bter")
+head_height = 1.5
+disp_name = "Aya"
+dialogue = PackedStringArray("Why the fuck is this room so big?", "Yo, are you the owner? Can you turn the fucking AC up, it\'s freezing in here.", "You\'re not? Well, find him then. This party sucks. What\'s even supposed to be in this room?", "......fucking freezing.......")
+lastLine = 4

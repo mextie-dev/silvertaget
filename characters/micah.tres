@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://em3oubtvgonv"]
+
+[ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_yyi8b"]
+[ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_ecv01"]
+
+[resource]
+script = ExtResource("1_yyi8b")
+texture = ExtResource("2_ecv01")
+head_height = 1.5
+disp_name = "Micah"
+dialogue = PackedStringArray("Shhh, I\'m trying to avoid that Dreja guy. He was sweet, but I don\'t really get into that kinda thing.", "Do you own this house? I got invited by some guy on Instagram claiming to be the owner.", "You\'re not? Weird. I wonder where he is.", "This house is really big...")
+lastLine = 4

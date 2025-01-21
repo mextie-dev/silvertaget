@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://cpw2m7aguintg"]
+
+[ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_8h0lj"]
+[ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_baibo"]
+
+[resource]
+script = ExtResource("1_8h0lj")
+texture = ExtResource("2_baibo")
+head_height = 1.5
+disp_name = "Dreja"
+dialogue = PackedStringArray("Hey, do you mind? I\'m waiting on someone.", "Whatever... it\'s been like 20 minutes. He\'s probably not coming.", "Nice room, eh? I thought this was the owners room for a minute...", "But I don\'t think so. There\'s not really that much in here when you look around.", "It\'s almost like it\'s staged...")
+lastLine = 5

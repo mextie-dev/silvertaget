@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=2 format=3 uid="uid://bjono6drmvguj"]
+
+[ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_dusr8"]
+
+[resource]
+script = ExtResource("1_dusr8")
+head_height = 1.5
+disp_name = "???"
+dialogue = PackedStringArray("Oh hey.", "How\'s it going? Having fun?", "I\'m the owner of this house.", "I mean, I\'m sure you\'ve noticed, it\'s not really a house.", "More like a building. If that makes sense.", "I don\'t really have a reason for throwing these, sometimes it\'s nice to... how do you say...", "Get a preview of the new crop.", "Hang around as long as you want, but it is getting pretty late.", "I\'d start heading back to the station soon.", "But, it\'s a free country.")
+lastLine = 10

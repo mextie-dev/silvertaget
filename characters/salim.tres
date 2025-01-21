@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://dukgcdry4l77l"]
+
+[ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_tvvov"]
+[ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_5dwlr"]
+
+[resource]
+script = ExtResource("1_tvvov")
+texture = ExtResource("2_5dwlr")
+head_height = 1.5
+disp_name = "Salim"
+dialogue = PackedStringArray("Yo, I\'m Salim, nice to meet you.", "Do you go to KTH too? This is my first party I\'ve been to since the semester started.", "It\'s kinda lame because like, I think engi majors don\'t really like partying, so I sometimes feel like a black sheep.", "Oh well. Still fun to get out and off campus every once in a while.")
+lastLine = 4
