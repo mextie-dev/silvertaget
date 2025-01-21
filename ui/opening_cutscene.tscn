@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dyey72dxo5hd2" path="res://ui/8bitoperatorSven.ttf" id="1_3hcht"]
 [ext_resource type="Script" path="res://ui/opening_cutscene.gd" id="1_4ioc7"]
-[ext_resource type="FontFile" uid="uid://dnl674pxdrsuv" path="res://ui/8bitoperator_jve.ttf" id="1_qoc5m"]
+[ext_resource type="Theme" uid="uid://c3mgasxd8q0ud" path="res://ui/game_theme.tres" id="3_2xfeq"]
 
 [sub_resource type="Animation" id="Animation_3gosy"]
 length = 0.001
@@ -113,7 +113,8 @@ horizontal_alignment = 1
 [node name="DKHFENF" type="Label" parent="CenterContainer"]
 visible = false
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_qoc5m")
+theme = ExtResource("3_2xfeq")
+theme_override_fonts/font = ExtResource("1_3hcht")
 text = "Du är på en fest i Stockholm"
 horizontal_alignment = 1
 

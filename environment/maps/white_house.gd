@@ -26,4 +26,6 @@ func exitScene():
 	
 	tween.tween_property(world_environment.environment, "fog_depth_end", 0.1, 5)
 	
+	get_tree().change_scene_to_file("res://ui/station_cutscene.tscn")
+	
 	pass

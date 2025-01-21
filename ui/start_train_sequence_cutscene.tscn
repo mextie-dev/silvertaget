@@ -93,7 +93,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oiqwh")
-scene = "res://environment/maps/white_house.tscn"
+scene = "res://environment/maps/train_map.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

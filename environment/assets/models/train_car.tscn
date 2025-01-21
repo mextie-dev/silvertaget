@@ -89,6 +89,7 @@ transform = Transform3D(-1, 0, -1.50996e-08, 0, 1, 0, 1.50996e-07, 0, -0.1, 0, 0
 material_override = ExtResource("4_pbuuy")
 
 [node name="Cube" parent="." index="8"]
+visible = false
 material_override = ExtResource("5_exaln")
 
 [node name="Cube_015" parent="." index="9"]
@@ -130,7 +131,11 @@ material_override = ExtResource("2_735kd")
 [node name="DoorWallLower_001" parent="." index="21"]
 material_override = ExtResource("4_i0dr3")
 
+[node name="Cube_001" parent="." index="22"]
+visible = false
+
 [node name="Cube_002" parent="." index="23"]
+visible = false
 material_override = ExtResource("5_exaln")
 
 [node name="Cube_003" parent="." index="24"]
