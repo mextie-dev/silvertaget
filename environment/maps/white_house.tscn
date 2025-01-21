@@ -84,6 +84,7 @@ size = Vector3(20, 1, 20)
 data = PackedVector3Array(-10, 0.5, 10, 10, 0.5, 10, -10, -0.5, 10, 10, 0.5, 10, 10, -0.5, 10, -10, -0.5, 10, 10, 0.5, -10, -10, 0.5, -10, 10, -0.5, -10, -10, 0.5, -10, -10, -0.5, -10, 10, -0.5, -10, 10, 0.5, 10, 10, 0.5, -10, 10, -0.5, 10, 10, 0.5, -10, 10, -0.5, -10, 10, -0.5, 10, -10, 0.5, -10, -10, 0.5, 10, -10, -0.5, -10, -10, 0.5, 10, -10, -0.5, 10, -10, -0.5, -10, 10, 0.5, 10, -10, 0.5, 10, 10, 0.5, -10, -10, 0.5, 10, -10, 0.5, -10, 10, 0.5, -10, -10, -0.5, 10, 10, -0.5, 10, -10, -0.5, -10, 10, -0.5, 10, 10, -0.5, -10, -10, -0.5, -10)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jomhn"]
+height = 3.97993
 
 [node name="WhiteHouse" type="Node3D"]
 script = ExtResource("1_w63ts")
@@ -690,10 +691,11 @@ color = Color(0.873117, 0, 0.32956, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5375, 3.75476, 9.88764)
 stats = ExtResource("19_4a0k5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Characters/Owner" groups=["doortrigger"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="Area3D" type="Area3D" parent="Characters/Owner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72019, 1, -0.818565)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/Owner/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/Owner/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_jomhn")
 
 [node name="Salim" parent="Characters" instance=ExtResource("18_n7s16")]
@@ -757,6 +759,8 @@ transform = Transform3D(0.977216, 9.27756e-09, -0.212246, 0.212246, -4.27155e-08
 size = Vector3(0.552637, 1, 1)
 texture_albedo = ExtResource("32_a6dyi")
 texture = ExtResource("34_m2025")
+
+[connection signal="body_entered" from="Characters/Owner/Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="Player"]
 [editable path="Doors/Door3"]
