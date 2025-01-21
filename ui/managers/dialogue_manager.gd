@@ -5,6 +5,8 @@ extends Node2D
 
 @onready var player := get_tree().get_first_node_in_group("player")
 
+var mouseInBox := false
+
 func _ready() -> void:
 	
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -52,6 +54,10 @@ func showDialogue(charName : String, dialogue : PackedStringArray, textSound : A
 func _input(InputEvent):
 	if !visible:
 		return
+	
+	if !mouseInBox:
+		return
+	
 	if Input.is_action_just_pressed("advance_dialogue"):
 		dialogue_display.visible_characters = 0
 		
@@ -62,3 +68,11 @@ func _input(InputEvent):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
 		pass
+
+
+func _on_box_hitbox_mouse_entered() -> void:
+	mouseInBox = true
+
+
+func _on_box_hitbox_mouse_exited() -> void:
+	mouseInBox = false

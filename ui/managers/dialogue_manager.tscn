@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://co6nygmb50spo"]
+[gd_scene load_steps=9 format=3 uid="uid://co6nygmb50spo"]
 
 [ext_resource type="Script" path="res://ui/managers/dialogue_manager.gd" id="1_pkrwm"]
 [ext_resource type="Texture2D" uid="uid://b0p2txnvhqrm5" path="res://environment/assets/textures/textbox.png" id="2_juun2"]
@@ -41,6 +41,9 @@ _data = {
 "RESET": SubResource("Animation_ldcnx"),
 "bob": SubResource("Animation_d7rte")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkski"]
+size = Vector2(300, 60)
 
 [node name="DialogueManger" type="Node2D"]
 script = ExtResource("1_pkrwm")
@@ -88,3 +91,12 @@ libraries = {
 }
 autoplay = "bob"
 speed_scale = 1.4
+
+[node name="BoxHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxHitbox"]
+position = Vector2(161, 182)
+shape = SubResource("RectangleShape2D_kkski")
+
+[connection signal="mouse_entered" from="BoxHitbox" to="." method="_on_box_hitbox_mouse_entered"]
+[connection signal="mouse_exited" from="BoxHitbox" to="." method="_on_box_hitbox_mouse_exited"]
