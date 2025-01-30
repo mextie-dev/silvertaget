@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://bd47h8hlwn0er" path="res://environment/assets/textures/poster_green.png" id="33_5dbv2"]
 [ext_resource type="Texture2D" uid="uid://qkvv5i8di5o3" path="res://environment/assets/textures/poster_red.png" id="34_m2025"]
 
-[sub_resource type="Environment" id="Environment_nw3xm"]
+[sub_resource type="Environment" id="Environment_g1ipt"]
 background_mode = 1
 ambient_light_source = 2
 ambient_light_color = Color(0.180005, 0.180005, 0.180005, 1)
@@ -90,7 +90,7 @@ height = 3.97993
 script = ExtResource("1_w63ts")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_nw3xm")
+environment = SubResource("Environment_g1ipt")
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -691,10 +691,10 @@ color = Color(0.873117, 0, 0.32956, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5375, 3.75476, 9.88764)
 stats = ExtResource("19_4a0k5")
 
-[node name="Area3D" type="Area3D" parent="Characters/Owner"]
+[node name="ExitAreaTrigger" type="Area3D" parent="Characters/Owner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72019, 1, -0.818565)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/Owner/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Characters/Owner/ExitAreaTrigger"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_jomhn")
 
@@ -760,7 +760,7 @@ size = Vector3(0.552637, 1, 1)
 texture_albedo = ExtResource("32_a6dyi")
 texture = ExtResource("34_m2025")
 
-[connection signal="body_entered" from="Characters/Owner/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Characters/Owner/ExitAreaTrigger" to="." method="_on_area_3d_body_entered" flags=6]
 
 [editable path="Player"]
 [editable path="Doors/Door3"]

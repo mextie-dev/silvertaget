@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=2 format=3 uid="uid://bjono6drmvguj"]
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://bjono6drmvguj"]
 
 [ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_dusr8"]
+[ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_puemw"]
 
 [resource]
 script = ExtResource("1_dusr8")
+texture = ExtResource("2_puemw")
 head_height = 1.5
 disp_name = "???"
 dialogue = PackedStringArray("Oh hey.", "How\'s it going? Having fun?", "I\'m the owner of this house.", "I mean, I\'m sure you\'ve noticed, it\'s not really a house.", "More like a building. If that makes sense.", "I don\'t really have a reason for throwing these, sometimes it\'s nice to... how do you say...", "Get a preview of the new crop.", "Hang around as long as you want, but it is getting pretty late.", "I\'d start heading back to the station soon.", "But, it\'s a free country.")
