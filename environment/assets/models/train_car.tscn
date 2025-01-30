@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d3gd36icjcqw7"]
+[gd_scene load_steps=19 format=4 uid="uid://d3gd36icjcqw7"]
 
 [ext_resource type="PackedScene" uid="uid://na05s2qgdrp8" path="res://environment/assets/models/blenderfiles/train_car.blend" id="1_b54ir"]
 [ext_resource type="Material" uid="uid://dyfqqrt6m76kg" path="res://environment/assets/materials/grey.tres" id="2_735kd"]
@@ -8,12 +8,45 @@
 [ext_resource type="Material" uid="uid://dukq2nv7tjaa" path="res://environment/assets/materials/stone_nottriplanar.tres" id="4_pbuuy"]
 [ext_resource type="Material" uid="uid://b1gt6qe4db1jv" path="res://environment/assets/materials/red.tres" id="5_exaln"]
 [ext_resource type="Texture2D" uid="uid://cul8va33kns46" path="res://environment/assets/textures/bluefloor.png" id="5_g7x8w"]
+[ext_resource type="PackedScene" uid="uid://co453ijnutgav" path="res://environment/assets/deco/fluorescent_lamp.tscn" id="9_w68hl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wexwf"]
 albedo_texture = ExtResource("5_g7x8w")
 uv1_scale = Vector3(8, 4, 4)
 uv1_world_triplanar = true
 texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxt8n"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ptk4v"]
+_surfaces = [{
+"aabb": AABB(-5.85, -3.5, -8.18385, 11.7, 7.01933, 16.3677),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("CAADAAEACAAJAAMACQAHAAMACQAKAAcACgAFAAcACgALAAUAAgAEAAYAAgAAAAQABwABAAMABwAFAAEAAgAKAAkAAgAGAAoA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("cRwAAL22AABxHP//0WsAAHEcAABBSQAAcRyQ+wAAAACN4wAAvbYAAI3j///RawAAjeMAAEFJAACN45D7AAAAAAAACjz//wAAAACbNy2UAAD//5s3LZQAAP//Cjz//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t5ns1"]
+resource_name = "train_car_Cube_036"
+_surfaces = [{
+"aabb": AABB(-5.85, -3.5, -8.18385, 11.7, 7.01933, 16.3677),
+"attribute_data": PackedByteArray("/x//P//f/z//nwAA/1//v/8f/3//3/9//5//v//f/3//X/8//5//P/+f/z//X/9//1//f/+f/3//n/9//5//fx1uAAAdbv+/HW7/vx1u/78dbv9/HW7/fx1u/38dbv8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("EAAHAAIAEAATAAcAEgAOAAYAEgAVAA4AFgAKAA8AFgAXAAoABAAIAAwABAAAAAgADQABAAUADQAJAAEAAwAUABEAAwALABQA"),
+"material": SubResource("StandardMaterial3D_rxt8n"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("cRwAAL22/79xHP//0Wv//3Ec///Ra4sVcRwAAEFJad9xHAAAQUn/v3EckPsAAP//cRyQ+wAAjOBxHJD7AACRFI3jAAC9tv+/jeP//9Fr//+N4///0Wu+xY3jAABBSW7YjeMAAEFJ/7+N45D7AAD//43jkPsAAGzijeOQ+wAAvsUAAAo8///5EwAAmzctlN7hAACbNy2UjuIAAJs3LZT9Ev//mzctlGnb//+bNy2UO+T//5s3LZS+xf//Cjz//77FAAD/f/9/j8DK9p/CD6sQsQAA/3//f4/Axkq/UNb3NcIAAP9//3+PwAxUmgyxtliqAAD/f/9/j8CWTlZODFSaDHv49cGOpxaz2E4sTov5isFRsXKt/1EuTAxUmgwMVJoM")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ptk4v")
 
 [sub_resource type="Animation" id="Animation_ah2i7"]
 length = 0.001
@@ -125,70 +158,82 @@ material_override = ExtResource("2_735kd")
 [node name="BackDoor" parent="." index="19"]
 material_override = ExtResource("4_pbuuy")
 
-[node name="DoorWall_001" parent="." index="20"]
+[node name="BackDoor2" type="MeshInstance3D" parent="." index="20"]
+transform = Transform3D(8.37168e-08, 5.3161e-15, -0.0774567, 2.98023e-08, -0.774567, 2.22045e-15, -0.309827, -7.45058e-08, -2.09292e-08, 17.4958, 0.906095, -0.0235075)
+material_override = ExtResource("4_pbuuy")
+mesh = SubResource("ArrayMesh_t5ns1")
+skeleton = NodePath("")
+
+[node name="DoorWall_001" parent="." index="21"]
 material_override = ExtResource("2_735kd")
 
-[node name="DoorWallLower_001" parent="." index="21"]
+[node name="DoorWallLower_001" parent="." index="22"]
 material_override = ExtResource("4_i0dr3")
 
-[node name="Cube_001" parent="." index="22"]
+[node name="Cube_001" parent="." index="23"]
 visible = false
 
-[node name="Cube_002" parent="." index="23"]
+[node name="Cube_002" parent="." index="24"]
 visible = false
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_003" parent="." index="24"]
+[node name="Cube_003" parent="." index="25"]
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_004" parent="." index="25"]
+[node name="Cube_004" parent="." index="26"]
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_005" parent="." index="26"]
+[node name="Cube_005" parent="." index="27"]
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_006" parent="." index="27"]
+[node name="Cube_006" parent="." index="28"]
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_009" parent="." index="28"]
+[node name="Cube_009" parent="." index="29"]
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_010" parent="." index="29"]
+[node name="Cube_010" parent="." index="30"]
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_013" parent="." index="30"]
+[node name="Cube_013" parent="." index="31"]
 material_override = ExtResource("5_exaln")
 
-[node name="Cube_014" parent="." index="31"]
+[node name="Cube_014" parent="." index="32"]
 material_override = ExtResource("5_exaln")
 
-[node name="Pole" parent="." index="32"]
+[node name="Pole" parent="." index="33"]
 material_override = ExtResource("4_i0dr3")
 
-[node name="Pole_002" parent="." index="33"]
+[node name="Pole_002" parent="." index="34"]
 material_override = ExtResource("4_i0dr3")
 
-[node name="Pole_001" parent="." index="34"]
+[node name="Pole_001" parent="." index="35"]
 material_override = ExtResource("4_i0dr3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="35"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="36"]
 libraries = {
 "": SubResource("AnimationLibrary_3oci8")
 }
 
-[node name="OpenDoorArea" type="Area3D" parent="." index="36"]
+[node name="OpenDoorArea" type="Area3D" parent="." index="37"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OpenDoorArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.343351, 1.165)
 shape = SubResource("BoxShape3D_hr8gm")
 
-[node name="CloseDoorArea" type="Area3D" parent="." index="37"]
+[node name="CloseDoorArea" type="Area3D" parent="." index="38"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CloseDoorArea" index="0"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.84138, -0.343351, 6.42521)
 shape = SubResource("BoxShape3D_mc518")
+
+[node name="FluorescentLamp" parent="." index="39" instance=ExtResource("9_w68hl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.803, 2.5, 0)
+
+[node name="FluorescentLamp2" parent="." index="40" instance=ExtResource("9_w68hl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.07533, 2.5, 0)
 
 [connection signal="body_entered" from="OpenDoorArea" to="." method="openDoor"]
 [connection signal="body_entered" from="CloseDoorArea" to="." method="closeDoor"]

@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://gbdpfk15mgno"]
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=4 format=3 uid="uid://gbdpfk15mgno"]
 
 [ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_5annm"]
+[ext_resource type="AudioStream" uid="uid://dh08f2eerdeu4" path="res://sounds/chrtalk/christian_talksound.wav" id="1_wvwti"]
 [ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_62ofj"]
 
 [resource]
 script = ExtResource("1_5annm")
 texture = ExtResource("2_62ofj")
 head_height = 1.5
+dialogue_sound = ExtResource("1_wvwti")
 disp_name = "Christian"
 dialogue = PackedStringArray("Yo, dude, you clearly don\'t understand. Post-post-grungecore is NOT a recognized form of the genre.", "Can you believe this guy? Thinks post-post-grungecore should be counted as a subgenre of cottagecore. Idiot.", "........moron...........")
 lastLine = 3

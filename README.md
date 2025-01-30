@@ -20,3 +20,5 @@ SFX ------------------------
 	- UI sound effects
 	
 	- Train station ambience
+	
+	- Door sounds

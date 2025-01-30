@@ -8,7 +8,8 @@
 [sub_resource type="Environment" id="Environment_x8mfm"]
 background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(0.400698, 0.400698, 0.400698, 1)
+ambient_light_color = Color(0.501406, 0.501407, 0.501406, 1)
+glow_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
@@ -102,11 +103,11 @@ environment = SubResource("Environment_x8mfm")
 [node name="DustParticle" parent="Train/train_car" index="0"]
 visible = false
 
-[node name="OpenDoorArea" parent="Train/train_car" index="36"]
+[node name="OpenDoorArea" parent="Train/train_car" index="37"]
 visible = false
 monitoring = false
 
-[node name="CloseDoorArea" parent="Train/train_car" index="37"]
+[node name="CloseDoorArea" parent="Train/train_car" index="38"]
 visible = false
 monitoring = false
 

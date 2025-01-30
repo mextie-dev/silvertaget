@@ -3,6 +3,9 @@ extends Node2D
 @onready var dialogue_display := $Dialogue
 @onready var name_display := $NameBoxCenterer/DispName
 
+@onready var talking_sound: AudioStreamPlayer = $TalkingSound
+
+
 @onready var player := get_tree().get_first_node_in_group("player")
 
 var mouseInBox := false
@@ -24,15 +27,25 @@ func _ready() -> void:
 func showDialogue(charName : String, dialogue : PackedStringArray, textSound : AudioStream, currentLine : int, lastLine : int):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
+	talking_sound.stream = textSound
+	
+	
+	
 	show()
-	print(lastLine)
+	#print(lastLine)
 	if currentLine >= lastLine:
-		#print(currentLine)
 		dialogue_display.text = dialogue[lastLine - 1]
 		name_display.text = charName
 		for i in len(dialogue[lastLine - 1]):
+			
+			talking_sound.pitch_scale = Global.rng.randf_range(0.95, 1.05)
+			
+			talking_sound.play()
 			dialogue_display.visible_characters += 1
 			i += 1
+			await get_tree().process_frame
+			await get_tree().process_frame # literally just manually waiting 3 frames in a row for text
+			await get_tree().process_frame
 			await get_tree().process_frame
 			await get_tree().process_frame # literally just manually waiting 3 frames in a row for text
 			await get_tree().process_frame
@@ -41,8 +54,14 @@ func showDialogue(charName : String, dialogue : PackedStringArray, textSound : A
 		dialogue_display.text = dialogue[currentLine]
 		name_display.text = charName
 		for i in len(dialogue[currentLine]):
+			talking_sound.pitch_scale = Global.rng.randf_range(0.95, 1.05)
+			talking_sound.play()
+			
 			dialogue_display.visible_characters += 1
 			i += 1
+			await get_tree().process_frame
+			await get_tree().process_frame # literally just manually waiting 3 frames in a row for text
+			await get_tree().process_frame
 			await get_tree().process_frame
 			await get_tree().process_frame # literally just manually waiting 3 frames in a row for text
 			await get_tree().process_frame # im fucking stoopid

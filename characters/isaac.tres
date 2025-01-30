@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://c6k4n3ct5k3ma"]
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=4 format=3 uid="uid://c6k4n3ct5k3ma"]
 
+[ext_resource type="AudioStream" uid="uid://blbf5sg6b42c" path="res://sounds/chrtalk/isaac_talksound.wav" id="1_d6m5q"]
 [ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_yi72f"]
 [ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_ais03"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("1_yi72f")
 texture = ExtResource("2_ais03")
 head_height = 1.5
+dialogue_sound = ExtResource("1_d6m5q")
 disp_name = "Isaac"
 dialogue = PackedStringArray("Bro you\'re fucking tripping. Cottagecore would not EXIST today without post-post-grungecore!", "This guy is seriously retarded. No wonder he had to leave 3 different bands.", "Hmph.")
 lastLine = 3

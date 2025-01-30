@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://co453ijnutgav"]
+
+[ext_resource type="Material" uid="uid://b02le6hx2yphw" path="res://environment/assets/materials/yellow_bulb.tres" id="1_f21we"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_eb4mi"]
+top_radius = 0.1
+bottom_radius = 0.1
+radial_segments = 6
+
+[node name="FluorescentLamp" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Bulb1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, -0.1)
+material_override = ExtResource("1_f21we")
+mesh = SubResource("CylinderMesh_eb4mi")
+
+[node name="Bulb2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0.1)
+material_override = ExtResource("1_f21we")
+mesh = SubResource("CylinderMesh_eb4mi")

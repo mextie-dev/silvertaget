@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://rpl18grso8n6"]
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=4 format=3 uid="uid://rpl18grso8n6"]
 
+[ext_resource type="AudioStream" uid="uid://blundd1keft0l" path="res://sounds/chrtalk/nisse_talksound.wav" id="1_1iexd"]
 [ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_vsbhw"]
 [ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_n428t"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("1_vsbhw")
 texture = ExtResource("2_n428t")
 head_height = 1.5
+dialogue_sound = ExtResource("1_1iexd")
 disp_name = "Nisse"
 dialogue = PackedStringArray("hhhheyyy... wharsudoen?", "immm chillen. im aa chiller.", ".............mmmmmmmm.................")
 lastLine = 3

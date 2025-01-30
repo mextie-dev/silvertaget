@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=3 format=3 uid="uid://bd2sciobfg6wl"]
+[gd_resource type="Resource" script_class="CharacterDialogue" load_steps=4 format=3 uid="uid://bd2sciobfg6wl"]
 
+[ext_resource type="AudioStream" uid="uid://c0hwih868no3e" path="res://sounds/chrtalk/matilda_talksound.wav" id="1_amfoh"]
 [ext_resource type="Script" path="res://characters/character_dialogue.gd" id="1_ex8em"]
 [ext_resource type="Texture2D" uid="uid://sou4kkrtwtuu" path="res://characters/fuckboy/FuckBoy.png" id="2_wkwrj"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("1_ex8em")
 texture = ExtResource("2_wkwrj")
 head_height = 1.5
+dialogue_sound = ExtResource("1_amfoh")
 disp_name = "Matilda"
 dialogue = PackedStringArray("That guy is really, really wasted.", "I hope he doesn\'t talk to me. I don\'t like drunk people.", "Do you own this house? I\'ve been looking for the owner for a while....", "Who does he think he is, Gatsby? Who doesn\'t show up to their own party...")
 lastLine = 4

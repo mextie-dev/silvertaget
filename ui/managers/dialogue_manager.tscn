@@ -98,5 +98,8 @@ speed_scale = 1.4
 position = Vector2(161, 182)
 shape = SubResource("RectangleShape2D_kkski")
 
+[node name="TalkingSound" type="AudioStreamPlayer" parent="."]
+mix_target = 2
+
 [connection signal="mouse_entered" from="BoxHitbox" to="." method="_on_box_hitbox_mouse_entered"]
 [connection signal="mouse_exited" from="BoxHitbox" to="." method="_on_box_hitbox_mouse_exited"]
