@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbq060sp8jofn"]
+[gd_scene load_steps=7 format=3 uid="uid://dbq060sp8jofn"]
 
 [ext_resource type="Theme" uid="uid://c3mgasxd8q0ud" path="res://ui/game_theme.tres" id="1_li13e"]
 [ext_resource type="Script" path="res://ui/options_screen.gd" id="2_lmabm"]
+[ext_resource type="AudioStream" uid="uid://2qrikltiy3gu" path="res://sounds/sfx/ui_hover.wav" id="3_fbysv"]
+[ext_resource type="AudioStream" uid="uid://je3pgdnfq0an" path="res://sounds/sfx/ui_press.wav" id="4_7k45f"]
 
 [sub_resource type="Gradient" id="Gradient_v10nc"]
 offsets = PackedFloat32Array(0)
@@ -99,7 +101,19 @@ offset_right = 288.0
 offset_bottom = 207.0
 text = "Avsluta"
 
+[node name="UISoundHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fbysv")
+volume_db = -16.815
+
+[node name="UISoundClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7k45f")
+volume_db = -16.138
+
+[connection signal="mouse_entered" from="MouseSens/MouseSensSlider" to="." method="_on_mouse_sens_slider_mouse_entered"]
 [connection signal="value_changed" from="MouseSens/MouseSensSlider" to="." method="setMouseSensitivity"]
+[connection signal="mouse_entered" from="AudioVol/AudioVolSlider" to="." method="_on_audio_vol_slider_mouse_entered"]
 [connection signal="value_changed" from="AudioVol/AudioVolSlider" to="." method="setAudioVolume"]
+[connection signal="mouse_entered" from="FullscreenButton" to="." method="_on_fullscreen_button_mouse_entered"]
 [connection signal="pressed" from="FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="mouse_entered" from="QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

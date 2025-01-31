@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://1dmkuw85qgts"]
+[gd_scene load_steps=41 format=3 uid="uid://1dmkuw85qgts"]
 
 [ext_resource type="Script" path="res://ui/title_screen.gd" id="1_8vp58"]
 [ext_resource type="Material" uid="uid://dj6bavc0aiu0i" path="res://environment/assets/materials/stone.tres" id="1_hy874"]
@@ -18,7 +18,9 @@
 [ext_resource type="Material" uid="uid://dmwmkoainiom4" path="res://environment/assets/materials/yellow.tres" id="16_b3ik8"]
 [ext_resource type="PackedScene" uid="uid://bmkmb338m0jxh" path="res://environment/assets/sign_nackrossen.tscn" id="17_0vb7q"]
 [ext_resource type="Theme" uid="uid://c3mgasxd8q0ud" path="res://ui/game_theme.tres" id="18_3lq01"]
+[ext_resource type="AudioStream" uid="uid://2qrikltiy3gu" path="res://sounds/sfx/ui_hover.wav" id="19_e1exs"]
 [ext_resource type="Texture2D" uid="uid://pxvfieb44cg2" path="res://environment/assets/textures/americanflag.png" id="19_lip3n"]
+[ext_resource type="AudioStream" uid="uid://je3pgdnfq0an" path="res://sounds/sfx/ui_press.wav" id="19_oec60"]
 [ext_resource type="Texture2D" uid="uid://dbnrdodnyh5e7" path="res://environment/assets/textures/swedishflag.png" id="20_fajqm"]
 [ext_resource type="PackedScene" uid="uid://dbq060sp8jofn" path="res://ui/options_screen.tscn" id="21_i12n0"]
 
@@ -1027,6 +1029,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("18_3lq01")
 
+[node name="UISoundHover" type="AudioStreamPlayer" parent="TitleScreenUI"]
+stream = ExtResource("19_e1exs")
+volume_db = -16.815
+
+[node name="UISoundClick" type="AudioStreamPlayer" parent="TitleScreenUI"]
+stream = ExtResource("19_oec60")
+volume_db = -16.138
+
 [node name="ByMextie" type="Label" parent="TitleScreenUI"]
 layout_mode = 2
 offset_left = 10.0
@@ -1099,9 +1109,15 @@ offset_right = 312.0
 offset_bottom = 96.0
 text = "Tillbacka"
 
+[connection signal="mouse_entered" from="TitleScreenUI/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="TitleScreenUI/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="TitleScreenUI/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="TitleScreenUI/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="TitleScreenUI/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="TitleScreenUI/Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="TitleScreenUI/EngLangButton" to="." method="_on_eng_lang_button_mouse_entered"]
 [connection signal="pressed" from="TitleScreenUI/EngLangButton" to="." method="_on_eng_lang_button_pressed"]
+[connection signal="mouse_entered" from="TitleScreenUI/SveLangButton" to="." method="_on_sve_lang_button_mouse_entered"]
 [connection signal="pressed" from="TitleScreenUI/SveLangButton" to="." method="_on_sve_lang_button_pressed"]
+[connection signal="mouse_entered" from="OptionsScreen/Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="OptionsScreen/Back" to="." method="_on_back_pressed"]
